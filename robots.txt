@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://kocaelisuluk.com.tr/sitemap.xml
