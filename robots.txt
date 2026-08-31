@@ -1,4 +1,22 @@
 ﻿User-agent: *
 Allow: /
 
+# AI & Search LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://kocaelisuluk.com.tr/sitemap.xml
+# LLM Context File
+# LLMs: https://kocaelisuluk.com.tr/llms.txt
