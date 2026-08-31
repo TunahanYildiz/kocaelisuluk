@@ -24,6 +24,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logom_2.png">
     <link rel="manifest" href="site.webmanifest">
 
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -41,7 +45,7 @@
         <div class="container">
             <!-- Logo/Brand -->
             <a class="navbar-brand" href="index.html">
-                <img src="assets/images/logom_2.png" alt="Kocaeli Sülük" class="navbar-logo">
+                <img src="assets/images/logom_2.webp" alt="Kocaeli Sülük" class="navbar-logo" width="45" height="45">
                 <span class="navbar-brand-text">Kocaeli Sülük</span>
             </a>
 
@@ -178,9 +182,9 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <img src="assets/images/GOLET_1.jpg"
+                        <img src="assets/images/golet_1.webp"
                             alt="Şifa Kaynağı - Kocaeli Darıca'daki doğal sülük yetiştirme göletimiz"
-                            class="img-fluid rounded shadow">
+                            class="img-fluid rounded shadow" loading="lazy" decoding="async" width="550" height="360">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="section-title mb-3">Hikayemiz: Gelenekten Gelen Şifa Tutkusu</h2>
@@ -213,9 +217,9 @@
                     <!-- Tür 1: Medicinalis -->
                     <div class="col-lg-5 col-md-6 mb-4">
                         <div class="species-card h-100">
-                            <img src="assets/images/verbana.png"
+                            <img src="assets/images/verbana.webp"
                                 alt="Kocaeli'de satılan Hirudo Medicinalis cinsi tıbbi sülük"
-                                class="img-fluid rounded mb-3">
+                                class="img-fluid rounded mb-3" loading="lazy" decoding="async" width="400" height="300">
                             <h4 class="species-title">Hirudo Medicinalis</h4>
                             <p class="species-text">"Tıbbın Gözdesi" olarak da bilinen bu tür, binlerce yıldır tıp
                                 tarihinde kullanılan en klasik sülüktür. Ürettiği biyoaktif enzimlerin zenginliği ve
@@ -225,9 +229,9 @@
                     <!-- Tür 2: Verbana -->
                     <div class="col-lg-5 col-md-6 mb-4">
                         <div class="species-card h-100">
-                            <img src="assets/images/verbana_2.png"
+                            <img src="assets/images/verbana_2.webp"
                                 alt="Kocaeli'de satılan Hirudo Verbana cinsi tıbbi sülük"
-                                class="img-fluid rounded mb-3">
+                                class="img-fluid rounded mb-3" loading="lazy" decoding="async" width="400" height="300">
                             <h4 class="species-title">Hirudo Verbana</h4>
                             <p class="species-text">"Doğanın Güçlü Şifacısı" olan Verbana, özellikle dolaşım sistemini
                                 düzenlemedeki etkinliği ve dayanıklılığı ile bilinir. Modern hirudoterapide en çok
