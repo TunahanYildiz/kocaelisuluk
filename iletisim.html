@@ -133,62 +133,78 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="contact-divider-title text-center">Veya Geleneksel Yöntemleri Kullanın</h4>
+                        <h4 class="contact-divider-title text-center">İletişim & Konum Bilgileri</h4>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row g-4">
                     <!-- Sol Sütun - İletişim Bilgileri -->
-                    <div class="col-lg-6 col-md-6 mb-4">
-                        <div class="contact-info">
-                            <h5 class="contact-info-title">İletişim Bilgileri</h5>
-                            <div class="contact-item">
-                                <i class="bi bi-geo-alt-fill"></i>
+                    <div class="col-lg-5 mb-4">
+                        <div class="contact-info h-100 p-4 bg-white rounded-3 shadow-sm border">
+                            <h5 class="contact-info-title mb-4 text-success fw-bold">Kocaeli Tıbbi Sülük Satışı</h5>
+                            
+                            <div class="contact-item mb-3 d-flex align-items-start gap-3">
+                                <div class="badge bg-success bg-opacity-10 text-success p-3 rounded-circle">
+                                    <i class="bi bi-geo-alt-fill fs-5"></i>
+                                </div>
                                 <div class="contact-details">
-                                    <h6>Adresimiz</h6>
-                                    <p>Nenehatun Mahallesi Battalgazi Caddesi No:2<br>Kocaeli/Darıca</p>
+                                    <h6 class="fw-bold mb-1">Elden Teslimat Noktası</h6>
+                                    <p class="text-muted mb-2">Nenehatun Mahallesi Battalgazi Caddesi No:2<br>Darıca / Kocaeli</p>
+                                    <a href="https://www.google.com/maps/place/Kocaeli+T%C4%B1bbi+S%C3%BCl%C3%BCk+Sat%C4%B1%C5%9F%C4%B1+-+Yerli+Do%C4%9Fal+Verbana/@40.7764146,29.3827489,19.83z" 
+                                       target="_blank" class="btn btn-sm btn-outline-success rounded-pill fw-bold">
+                                        <i class="bi bi-map-fill me-1"></i>Google Haritalar'da Yol Tarifi Al
+                                    </a>
                                 </div>
                             </div>
-                            <div class="contact-item">
-                                <i class="bi bi-telephone-fill"></i>
+
+                            <div class="contact-item mb-3 d-flex align-items-start gap-3">
+                                <div class="badge bg-success bg-opacity-10 text-success p-3 rounded-circle">
+                                    <i class="bi bi-clock-fill fs-5"></i>
+                                </div>
                                 <div class="contact-details">
-                                    <h6>Telefon</h6>
-                                    <p><a href="tel:+905519482274">+90 551 948 22 74</a></p>
+                                    <h6 class="fw-bold mb-1">Teslimat & Çalışma Saatleri</h6>
+                                    <p class="text-muted mb-0">Haftanın 7 Günü: <strong>08:00 - 22:00</strong><br><small>Gelmeden önce WhatsApp'tan yazmanız rica olunur.</small></p>
                                 </div>
                             </div>
-                            <div class="contact-item">
-                                <i class="bi bi-envelope-fill"></i>
+
+                            <div class="contact-item mb-3 d-flex align-items-start gap-3">
+                                <div class="badge bg-success bg-opacity-10 text-success p-3 rounded-circle">
+                                    <i class="bi bi-telephone-fill fs-5"></i>
+                                </div>
                                 <div class="contact-details">
-                                    <h6>E-posta</h6>
-                                    <p><a href="mailto:suluktoptan@gmail.com">suluktoptan@gmail.com</a></p>
+                                    <h6 class="fw-bold mb-1">Telefon & WhatsApp</h6>
+                                    <p class="mb-0"><a href="tel:+905519482274" class="text-decoration-none fw-bold text-dark">+90 551 948 22 74</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item d-flex align-items-start gap-3">
+                                <div class="badge bg-success bg-opacity-10 text-success p-3 rounded-circle">
+                                    <i class="bi bi-envelope-fill fs-5"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h6 class="fw-bold mb-1">E-posta</h6>
+                                    <p class="mb-0"><a href="mailto:suluktoptan@gmail.com" class="text-decoration-none text-muted">suluktoptan@gmail.com</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Sağ Sütun - İletişim Formu -->
-                    <div class="col-lg-6 col-md-6 mb-4">
-                        <div class="contact-form">
-                            <h5 class="contact-form-title">Mesaj Gönderin</h5>
-                            <form action="https://formspree.io/f/xvgwygpo" method="POST">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Ad Soyad</label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
+                    <!-- Sağ Sütun - Google Harita & Mesaj Formu -->
+                    <div class="col-lg-7 mb-4">
+                        <div class="card border-0 shadow-sm rounded-3 overflow-hidden h-100">
+                            <div class="card-body p-0">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1512.6!2d29.3827489!3d40.7764146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa90edeb341e8ee9f%3A0x6dafa2aaca370ec4!2sKocaeli%20T%C4%B1bbi%20S%C3%BCl%C3%BCk%20Sat%C4%B1%C5%9F%C4%B1%20-%20Yerli%20Do%C4%9Fal%20Verbana!5e0!3m2!1str!2str!4v1725139000000!5m2!1str!2str" 
+                                    width="100%" 
+                                    height="340" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                                <div class="p-3 bg-light border-top text-center">
+                                    <span class="text-muted small">📍 Darıca, Gebze ve tüm Kocaeli'den kolayca ulaşabileceğiniz konumumuzdasınız.</span>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">E-posta</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label">Konu</label>
-                                    <input type="text" class="form-control" id="subject" name="subject" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">Mesajınız</label>
-                                    <textarea class="form-control" id="message" name="message" rows="4"
-                                        required></textarea>
-                                </div>
-                                <button type="submit" class="btn form-submit-btn">Formu Gönder</button>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -223,6 +239,13 @@
                 <div class="col-lg-4 col-md-12 mb-4">
                     <h5 class="footer-title">Bize Ulaşın</h5>
                     <ul class="footer-contact">
+                        <li>
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <a href="https://www.google.com/maps/place/Kocaeli+T%C4%B1bbi+S%C3%BCl%C3%BCk+Sat%C4%B1%C5%9F%C4%B1+-+Yerli+Do%C4%9Fal+Verbana/@40.7764146,29.3827489,19.83z" 
+                               target="_blank" style="color: inherit; text-decoration: none;">
+                                Darıca / Kocaeli (Haritada Aç)
+                            </a>
+                        </li>
                         <li>
                             <i class="bi bi-telephone-fill"></i>
                             <span>+90 551 948 22 74</span>
