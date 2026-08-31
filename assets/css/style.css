@@ -1,0 +1,2440 @@
+/* ========================================
+   NAVBAR STILLERİ
+======================================== */
+
+/* Navbar Container Flexbox Düzeni */
+.custom-navbar .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+/* Sepet İkonu Bölümü (Hamburger menüden bağımsız) */
+.navbar-cart-section {
+    display: flex;
+    align-items: center;
+    z-index: 1050;
+    /* Hamburger menünün üstünde kalması için */
+    margin-left: auto;
+}
+
+/* Masaüstü Navbar Düzeni */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        flex-grow: 0 !important;
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
+
+    .navbar-cart-section {
+        order: 2;
+        /* Sepet ikonunu sağa yerleştir */
+    }
+
+    .navbar-collapse {
+        order: 1;
+        /* Menüyü ortaya yerleştir */
+    }
+}
+
+/* Mobil Navbar Düzeni */
+@media (max-width: 991.98px) {
+    .navbar-cart-section {
+        order: 2;
+        /* Sepet ikonunu hamburger menünün yanına yerleştir */
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+
+    .navbar-toggler {
+        order: 3;
+        /* Hamburger menüyü en sağa yerleştir */
+    }
+
+    .navbar-brand {
+        order: 1;
+        /* Logoyu sola yerleştir */
+    }
+}
+
+/* Ana Navbar Stili */
+.custom-navbar {
+    background-color: #fff !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+/* Navbar Brand (Logo) Stili */
+.custom-navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2d5016 !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-right: auto;
+}
+
+.custom-navbar .navbar-brand:hover {
+    color: #4a7c2a !important;
+}
+
+/* Logo Görsel Stili */
+.navbar-logo {
+    height: 60px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.custom-navbar .navbar-brand:hover .navbar-logo {
+    transform: scale(1.05);
+}
+
+/* Marka Adı Yazı Stili */
+.navbar-brand-text {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #2d5016;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar .navbar-brand:hover .navbar-brand-text {
+    color: #4a7c2a;
+}
+
+/* Nav Link Stilleri */
+.custom-navbar .nav-link {
+    color: #555 !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.25rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #2d5016 !important;
+    background-color: rgba(45, 80, 22, 0.05);
+}
+
+.custom-navbar .nav-link.active {
+    color: #2d5016 !important;
+    font-weight: 600;
+}
+
+.custom-navbar .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: #4a7c2a;
+    border-radius: 2px;
+}
+
+/* CTA Button Stili */
+.cta-button {
+    background-color: #4a7c2a !important;
+    border: none !important;
+    color: #fff !important;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(74, 124, 42, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #3a6422 !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 124, 42, 0.3);
+}
+
+.cta-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(74, 124, 42, 0.25) !important;
+}
+
+/* Mobile Toggle Button Stili */
+.custom-navbar .navbar-toggler {
+    border: none !important;
+    padding: 0.25rem 0.5rem;
+}
+
+.custom-navbar .navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.custom-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2845, 80, 22, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Mobile Menu Stili */
+@media (max-width: 991.98px) {
+    .custom-navbar .navbar-collapse {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+
+    .custom-navbar .nav-link {
+        margin: 0.25rem 0;
+        text-align: center;
+    }
+
+    .custom-navbar .nav-link.active::after {
+        display: none;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    /* Mobile Logo Stili */
+    .navbar-logo {
+        height: 50px;
+        max-width: 160px;
+    }
+
+    .navbar-brand-text {
+        font-size: 1.3rem;
+    }
+}
+
+/* Küçük Ekranlar için Logo */
+@media (max-width: 575.98px) {
+    .navbar-logo {
+        height: 45px;
+        max-width: 140px;
+    }
+
+    .navbar-brand-text {
+        font-size: 1.1rem;
+    }
+
+    .custom-navbar .navbar-brand {
+        gap: 0.25rem;
+    }
+}
+
+/* Sticky Navbar Geçiş Efekti */
+.custom-navbar.scrolled {
+    padding: 0.25rem 0;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================
+   HERO SECTION STİLLERİ
+======================================== */
+
+/* Ana Hero Section Stili */
+.hero-section {
+    min-height: 80vh;
+    background-image: url('../images/GOLET_4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero Overlay (Koyu Katman) */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Hero İçerik Konteyner */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 0;
+}
+
+/* Hero Ana Başlık */
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+/* Hero Alt Başlık */
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #f8f9fa;
+    margin-bottom: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero CTA Butonu */
+.hero-cta-button {
+    background-color: #fff !important;
+    color: #2d5016 !important;
+    border: 2px solid #fff !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem !important;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-cta-button:hover {
+    background-color: transparent !important;
+    color: #fff !important;
+    border-color: #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
+}
+
+.hero-cta-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25) !important;
+}
+
+/* ========================================
+   RESPONSIVE HERO STİLLERİ
+======================================== */
+
+/* Tablet Stilleri */
+@media (max-width: 991.98px) {
+    .hero-section {
+        min-height: 70vh;
+        background-attachment: scroll;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-cta-button {
+        font-size: 1rem;
+        padding: 0.875rem 2rem !important;
+    }
+}
+
+/* Mobile Stilleri */
+@media (max-width: 767.98px) {
+    .hero-section {
+        min-height: 60vh;
+    }
+
+    .hero-content {
+        padding: 1.5rem 0;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .hero-cta-button {
+        font-size: 0.95rem;
+        padding: 0.75rem 1.5rem !important;
+    }
+}
+
+/* Çok Küçük Ekranlar */
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-cta-button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.25rem !important;
+    }
+}
+
+/* ========================================
+   FEATURES SECTION STİLLERİ
+======================================== */
+
+/* Ana Features Section Stili */
+.features-section {
+    background-color: #fff;
+    padding: 5rem 0;
+}
+
+/* Features Ana Başlık */
+.features-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d5016;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Feature Card Stili */
+.feature-card {
+    padding: 2rem 1.5rem;
+    height: 100%;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    background-color: #fff;
+    border: 1px solid rgba(45, 80, 22, 0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
+    border-color: rgba(45, 80, 22, 0.2);
+}
+
+/* Feature Icon Stili */
+.feature-icon {
+    margin-bottom: 1.5rem;
+}
+
+.feature-icon i {
+    font-size: 3rem;
+    color: #4a7c2a;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon i {
+    color: #2d5016;
+    transform: scale(1.1);
+}
+
+/* Feature Başlık Stili */
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+/* Feature Açıklama Stili */
+.feature-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* ========================================
+   RESPONSIVE FEATURES STİLLERİ
+======================================== */
+
+/* Tablet Stilleri */
+@media (max-width: 991.98px) {
+    .features-section {
+        padding: 4rem 0;
+    }
+
+    .features-title {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-icon i {
+        font-size: 2.5rem;
+    }
+
+    .feature-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile Stilleri */
+@media (max-width: 767.98px) {
+    .features-section {
+        padding: 3rem 0;
+    }
+
+    .features-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature-card {
+        padding: 1.25rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature-icon i {
+        font-size: 2.2rem;
+    }
+
+    .feature-title {
+        font-size: 1.2rem;
+    }
+
+    .feature-description {
+        font-size: 0.95rem;
+    }
+}
+
+/* Çok Küçük Ekranlar */
+@media (max-width: 575.98px) {
+    .features-section {
+        padding: 2.5rem 0;
+    }
+
+    .features-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-card {
+        padding: 1rem 0.75rem;
+    }
+
+    .feature-icon i {
+        font-size: 2rem;
+    }
+
+    .feature-title {
+        font-size: 1.1rem;
+    }
+
+    .feature-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   FOOTER SECTION STİLLERİ
+======================================== */
+
+/* Ana Footer Stili */
+.footer-section {
+    background-color: #2d3a32;
+    color: #fff;
+    padding: 1rem 0 0.3rem;
+}
+
+/* Footer Başlık Stili */
+.footer-title {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #4a7c2a;
+    border-radius: 2px;
+}
+
+/* Footer Açıklama Stili */
+.footer-description {
+    color: #e9ecef;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Footer Link Listesi Stili */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #e9ecef;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #4a7c2a;
+}
+
+/* Footer İletişim Listesi Stili */
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: #e9ecef;
+    font-size: 0.95rem;
+}
+
+.footer-contact i {
+    color: #4a7c2a;
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Footer Ayırıcı Çizgi */
+.footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0.5rem 0 0.3rem;
+}
+
+/* Footer Copyright Stili */
+.footer-copyright {
+    color: #adb5bd;
+    font-size: 0.85rem;
+    margin: 0;
+    padding: 0.2rem 0;
+}
+
+/* ========================================
+   RESPONSIVE FOOTER STİLLERİ
+======================================== */
+
+/* Tablet Stilleri */
+@media (max-width: 991.98px) {
+    .footer-section {
+        padding: 0.75rem 0 0.3rem;
+    }
+
+    .footer-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.875rem;
+    }
+
+    .footer-description,
+    .footer-links a,
+    .footer-contact li {
+        font-size: 0.9rem;
+    }
+
+    .footer-contact i {
+        font-size: 1rem;
+        margin-right: 0.5rem;
+    }
+}
+
+/* Mobile Stilleri */
+@media (max-width: 767.98px) {
+    .footer-section {
+        padding: 0.6rem 0 0.2rem;
+    }
+
+    .footer-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        text-align: center;
+    }
+
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-description,
+    .footer-links,
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-links li {
+        margin-bottom: 0;
+    }
+
+    .footer-contact li {
+        justify-content: center;
+    }
+
+    .footer-description,
+    .footer-links a,
+    .footer-contact li {
+        font-size: 0.85rem;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+}
+
+/* Çok Küçük Ekranlar */
+@media (max-width: 575.98px) {
+    .footer-section {
+        padding: 0.5rem 0 0.15rem;
+    }
+
+    .footer-title {
+        font-size: 1rem;
+    }
+
+    .footer-description,
+    .footer-links a,
+    .footer-contact li {
+        font-size: 0.8rem;
+    }
+
+    .footer-contact i {
+        font-size: 0.9rem;
+        margin-right: 0.4rem;
+    }
+
+    .footer-copyright {
+        font-size: 0.75rem;
+    }
+
+    .footer-divider {
+        margin: 0.4rem 0 0.2rem;
+    }
+}
+
+/* ========================================
+   ÜRÜNLER SAYFASI STİLLERİ
+======================================== */
+
+/* Sade Sayfa Başlığı Bölümü */
+.page-header-simple {
+    padding: 1.5rem 0;
+    background-color: #fff;
+}
+
+.page-title-simple {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d5016;
+    margin-bottom: 0;
+}
+
+.page-header-content {
+    padding: 1rem 0;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d5016;
+    margin-bottom: 1rem;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ürünler Bölümü */
+.products-section {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+
+/* Ürün Kartı Stili */
+.product-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(45, 80, 22, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
+    border-color: rgba(45, 80, 22, 0.2);
+}
+
+/* Ürün Görsel Stili */
+.product-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* Ürün İçerik Stili */
+.product-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ürün Başlık Stili */
+.product-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d5016;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+/* Ürün Açıklama Stili */
+.product-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+/* Ürün Fiyat Stili */
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #4a7c2a;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+/* Ürün Butonu Stili */
+.product-btn {
+    background-color: #4a7c2a !important;
+    border: none !important;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+/* Adet Giriş Alanı Stili */
+.quantity-input {
+    max-width: 80px;
+    text-align: center;
+    font-weight: 600;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.quantity-input:focus {
+    border-color: #4a7c2a;
+    box-shadow: 0 0 0 0.2rem rgba(74, 124, 42, 0.15);
+}
+
+/* Input Group Stili */
+.input-group {
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group .form-control {
+    border-right: none;
+}
+
+.input-group .btn {
+    border-left: none;
+}
+
+.product-btn:hover {
+    background-color: #3a6422 !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 124, 42, 0.3);
+}
+
+.product-btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(74, 124, 42, 0.25) !important;
+}
+
+/* ========================================
+   RESPONSIVE ÜRÜNLER STİLLERİ
+======================================== */
+
+/* Tablet Stilleri */
+@media (max-width: 991.98px) {
+    .page-header {
+        padding: 2.5rem 0;
+    }
+
+    .page-header-simple {
+        padding: 1.25rem 0;
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .page-title-simple {
+        font-size: 1.8rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .products-section {
+        padding: 3rem 0;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .product-image img {
+        height: 220px;
+    }
+
+    .product-content {
+        padding: 1.25rem;
+    }
+
+    .product-title {
+        font-size: 1.2rem;
+    }
+
+    .product-description {
+        font-size: 0.9rem;
+    }
+
+    .product-price {
+        font-size: 1.1rem;
+    }
+
+    .product-btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.25rem !important;
+    }
+}
+
+/* Mobile Stilleri */
+@media (max-width: 767.98px) {
+    .page-header {
+        padding: 2rem 0;
+    }
+
+    .page-header-simple {
+        padding: 1rem 0;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-title-simple {
+        font-size: 1.6rem;
+    }
+
+    .page-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .products-section {
+        padding: 2.5rem 0;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .product-image img {
+        height: 200px;
+    }
+
+    .product-content {
+        padding: 0.75rem;
+    }
+
+    .product-title {
+        font-size: 1rem;
+    }
+
+    .product-description {
+        font-size: 0.8rem;
+    }
+
+    .product-price {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .product-btn {
+        font-size: 0.85rem;
+        padding: 0.65rem 1rem !important;
+    }
+}
+
+/* Çok Küçük Ekranlar */
+@media (max-width: 575.98px) {
+    .page-header {
+        padding: 1.5rem 0;
+    }
+
+    .page-header-simple {
+        padding: 0.75rem 0;
+    }
+
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .page-title-simple {
+        font-size: 1.4rem;
+    }
+
+    .page-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .products-section {
+        padding: 2rem 0;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-image img {
+        height: 180px;
+    }
+
+    .product-content {
+        padding: 0.625rem;
+    }
+
+    .product-title {
+        font-size: 0.9rem;
+    }
+
+    .product-description {
+        font-size: 0.75rem;
+    }
+
+    .product-price {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .product-btn {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.875rem !important;
+    }
+}
+
+/* ========================================
+   HAKKIMIZDA SAYFASI STİLLERİ
+======================================== */
+
+/* Hikayemiz Bölümü */
+.about-section {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+
+/* About Görsel Stili */
+.about-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.02);
+}
+
+/* About İçerik Stili */
+.about-content {
+    padding: 1rem 0;
+}
+
+.about-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d5016;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    position: relative;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #4a7c2a;
+    border-radius: 2px;
+}
+
+.about-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.about-text:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   RESPONSIVE HAKKIMIZDA STİLLERİ
+======================================== */
+
+/* Tablet Stilleri */
+@media (max-width: 991.98px) {
+    .about-section {
+        padding: 3rem 0;
+    }
+
+    .about-title {
+        font-size: 1.6rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .about-content {
+        padding: 0.5rem 0;
+    }
+}
+
+/* Mobile Stilleri */
+@media (max-width: 767.98px) {
+    .about-section {
+        padding: 2.5rem 0;
+    }
+
+    .about-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .about-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .about-image {
+        margin-bottom: 2rem;
+    }
+
+    .about-content {
+        padding: 0;
+    }
+}
+
+/* Çok Küçük Ekranlar */
+@media (max-width: 575.98px) {
+    .about-section {
+        padding: 2rem 0;
+    }
+
+    .about-title {
+        font-size: 1.3rem;
+    }
+
+    .about-text {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .about-image {
+        border-radius: 10px;
+    }
+
+    .about-image img {
+        border-radius: 10px;
+    }
+}
+
+/* ========================================
+   İLETİŞİM SAYFASI STİLLERİ
+======================================== */
+
+/* WhatsApp CTA Bölümü */
+.whatsapp-cta-section {
+    padding: 3rem 0;
+    background-color: #fff;
+}
+
+.whatsapp-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(37, 211, 102, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #25d366, #128c7e);
+}
+
+.whatsapp-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d5016;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.whatsapp-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* WhatsApp Butonu */
+.whatsapp-btn {
+    background-color: #25d366 !important;
+    border: none !important;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem !important;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.whatsapp-btn:hover::before {
+    left: 100%;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e !important;
+    color: #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(37, 211, 102, 0.25) !important;
+}
+
+.whatsapp-btn i {
+    font-size: 1.5rem;
+}
+
+/* İletişim Bölümü */
+.contact-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.contact-divider-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.contact-divider-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: #4a7c2a;
+    border-radius: 2px;
+}
+
+/* İletişim Bilgileri */
+.contact-info {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.contact-info-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+}
+
+.contact-item i {
+    color: #4a7c2a;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+    width: 24px;
+    text-align: center;
+}
+
+.contact-details h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.contact-details a {
+    color: #4a7c2a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #2d5016;
+}
+
+/* İletişim Formu */
+.contact-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.contact-form-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #4a7c2a;
+    box-shadow: 0 0 0 0.2rem rgba(74, 124, 42, 0.15);
+}
+
+.form-submit-btn {
+    background-color: #4a7c2a !important;
+    border: none !important;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 2rem !important;
+    border-radius: 25px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-submit-btn:hover {
+    background-color: #3a6422 !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 124, 42, 0.3);
+}
+
+/* ========================================
+   RESPONSIVE İLETİŞİM STİLLERİ
+======================================== */
+
+/* Tablet Stilleri */
+@media (max-width: 991.98px) {
+    .whatsapp-cta-section {
+        padding: 2.5rem 0;
+    }
+
+    .whatsapp-card {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .whatsapp-title {
+        font-size: 1.8rem;
+    }
+
+    .whatsapp-description {
+        font-size: 1rem;
+    }
+
+    .whatsapp-btn {
+        font-size: 1.1rem;
+        padding: 0.875rem 2rem !important;
+    }
+
+    .contact-section {
+        padding: 3rem 0;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-item {
+        padding: 0.875rem;
+    }
+}
+
+/* Mobile Stilleri */
+@media (max-width: 767.98px) {
+    .whatsapp-cta-section {
+        padding: 2rem 0;
+    }
+
+    .whatsapp-card {
+        padding: 2rem 1rem;
+        border-radius: 15px;
+    }
+
+    .whatsapp-title {
+        font-size: 1.6rem;
+    }
+
+    .whatsapp-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .whatsapp-btn {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem !important;
+    }
+
+    .contact-section {
+        padding: 2.5rem 0;
+    }
+
+    .contact-divider-title {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-info-title,
+    .contact-form-title {
+        font-size: 1.2rem;
+    }
+
+    .contact-item {
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-item i {
+        font-size: 1.3rem;
+        margin-right: 0.75rem;
+    }
+}
+
+/* Çok Küçük Ekranlar */
+@media (max-width: 575.98px) {
+    .whatsapp-card {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .whatsapp-title {
+        font-size: 1.4rem;
+    }
+
+    .whatsapp-description {
+        font-size: 0.9rem;
+    }
+
+    .whatsapp-btn {
+        font-size: 0.95rem;
+        padding: 0.7rem 1.25rem !important;
+    }
+
+    .whatsapp-btn i {
+        font-size: 1.3rem;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .contact-item {
+        padding: 0.625rem;
+    }
+
+    .contact-item i {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+    }
+
+    .contact-details h6 {
+        font-size: 0.9rem;
+    }
+
+    .contact-details p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ========================================
+   SEPET İKONU STİLLERİ
+======================================== */
+
+#cart-button {
+    font-size: 1.5rem;
+    position: relative;
+    color: #555 !important;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cart-button:hover {
+    color: #2d5016 !important;
+    background-color: rgba(45, 80, 22, 0.1);
+}
+
+#cart-item-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.75rem;
+    padding: 0.2em 0.5em;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(25%, -25%);
+}
+
+/* Sepet İkonu Responsive Stilleri */
+@media (max-width: 767.98px) {
+    #cart-button {
+        font-size: 1.3rem;
+    }
+
+    #cart-item-count {
+        font-size: 0.7rem;
+        padding: 0.15em 0.4em;
+        min-width: 16px;
+        height: 16px;
+        right: -3px;
+    }
+}
+
+/* ========================================
+   SEPET MODAL STİLLERİ
+======================================== */
+
+/* Modal genel stilleri */
+#cartModal .modal-content {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+#cartModal .modal-header {
+    background: linear-gradient(135deg, #4a7c2a, #2d5016);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+}
+
+#cartModal .modal-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+#cartModal .btn-close {
+    filter: invert(1);
+}
+
+/* Modal body stilleri */
+#cartModal .modal-body {
+    padding: 1.5rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Cart item stilleri */
+#cartModal .cart-item {
+    padding: 1rem;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+#cartModal .cart-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    border-color: #4a7c2a;
+}
+
+#cartModal .cart-item h6.text-success {
+    color: #198754 !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#cartModal .cart-item .text-muted {
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+/* Badge stilleri */
+#cartModal .badge {
+    font-size: 0.85rem;
+    padding: 0.5em 0.75em;
+}
+
+/* Sil butonu stilleri */
+#cartModal .remove-from-cart-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#cartModal .remove-from-cart-btn:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Modal footer stilleri */
+#cartModal .modal-footer {
+    background-color: #f8f9fa;
+    border-radius: 0 0 15px 15px;
+    border-top: 1px solid #e9ecef;
+    padding: 1.5rem;
+}
+
+#cartModal .modal-footer h5 {
+    color: #2d5016;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Modal footer butonları için boşluk */
+#cartModal .modal-footer .btn {
+    margin: 0 0.5rem;
+    min-width: 140px;
+}
+
+/* Mobil için daha fazla boşluk */
+@media (max-width: 767.98px) {
+    #cartModal .modal-footer {
+        padding: 1.5rem 1rem;
+    }
+
+    #cartModal .modal-footer .btn {
+        margin: 0.5rem 0;
+        min-width: 100%;
+        width: 100%;
+    }
+
+    #cartModal .modal-footer .btn:first-child {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Masaüstü için daha fazla boşluk */
+@media (min-width: 768px) {
+    #cartModal .modal-footer {
+        padding: 2rem 1.5rem;
+    }
+
+    #cartModal .modal-footer .btn {
+        margin: 0 1rem;
+        min-width: 160px;
+    }
+}
+
+/* Checkout butonu stilleri */
+#cartModal #checkout-whatsapp-btn {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+#cartModal #checkout-whatsapp-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #128c7e, #25d366);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+#cartModal #checkout-whatsapp-btn:disabled {
+    background: #6c757d;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Adet güncelleme butonları stilleri */
+#cartModal .quantity-decrease,
+#cartModal .quantity-increase {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#cartModal .quantity-decrease:hover,
+#cartModal .quantity-increase:hover {
+    transform: scale(1.1);
+    background-color: #4a7c2a;
+    border-color: #4a7c2a;
+    color: white;
+}
+
+/* Modal responsive stilleri */
+@media (max-width: 767.98px) {
+    #cartModal .modal-dialog {
+        margin: 0.5rem;
+        max-height: calc(100vh - 1rem);
+    }
+
+    #cartModal .modal-content {
+        max-height: calc(100vh - 1rem);
+        display: flex;
+        flex-direction: column;
+    }
+
+    #cartModal .modal-body {
+        padding: 1rem;
+        flex: 1;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #cartModal .list-group-item {
+        padding: 0.75rem;
+    }
+
+    #cartModal .modal-footer h5 {
+        font-size: 1.1rem;
+    }
+
+    #cartModal #checkout-whatsapp-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #cartModal .quantity-decrease,
+    #cartModal .quantity-increase {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    #cartModal .cart-item {
+        padding: 0.75rem;
+    }
+
+    #cartModal .remove-from-cart-btn {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ========================================
+   GELİŞMİŞ SEPETE EKLE BUTONU STİLLERİ
+======================================== */
+
+/* Ana Sepete Ekle Butonu */
+.add-to-cart-btn {
+    background: linear-gradient(135deg, #4a7c2a 0%, #5a8c3a 100%);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 0.4rem 1.5rem;
+    border-radius: 0 25px 25px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 15px rgba(74, 124, 42, 0.2);
+}
+
+.add-to-cart-btn:hover {
+    background: linear-gradient(135deg, #5a8c3a 0%, #4a7c2a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74, 124, 42, 0.3);
+    color: white;
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(74, 124, 42, 0.2);
+}
+
+.add-to-cart-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Eklendi Durumu Animasyonu */
+.add-to-cart-btn.added-to-cart {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    animation: successPulse 0.6s ease-in-out;
+}
+
+@keyframes successPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Yeni Temiz Input Group */
+.product-card .input-group {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: 0.4rem;
+    flex-direction: row;
+    border-radius: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.product-card .add-to-cart-btn {
+    flex: 1;
+    margin-left: 0;
+}
+
+/* Temiz Adet Kontrolü */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 2px 10px;
+    background: #e9ecef;
+    border-radius: 25px 0 0 25px;
+    border: 1px solid #dee2e6;
+    color: #2d3a32;
+}
+
+/* PC modunda elemanları bitişik yap */
+@media (min-width: 768px) {
+    .product-card .input-group>* {
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    .product-card .input-group .quantity-controls:first-child {
+        border-radius: 25px 0 0 25px !important;
+        padding: 0.35rem 10px !important;
+    }
+
+    .product-card .input-group .add-to-cart-btn:last-child {
+        border-radius: 0 25px 25px 0 !important;
+    }
+}
+
+/* Mobilde adet alanının sağ tarafını da yuvarlak yap */
+@media (max-width: 767.98px) {
+    .quantity-controls {
+        border-radius: 25px 25px 0 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .add-to-cart-btn {
+        border-radius: 0 0 25px 25px;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    /* Input group'u tamamen bitişik yap */
+    .product-card .input-group {
+        margin-top: 0.4rem;
+        gap: 0;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Input group içindeki elemanları bitişik yap */
+    .product-card .input-group>* {
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    /* İlk eleman (quantity-controls) için üst köşeleri yuvarlak */
+    .product-card .input-group .quantity-controls:first-child {
+        border-radius: 25px 25px 0 0 !important;
+    }
+
+    /* Son eleman (add-to-cart-btn) için alt köşeleri yuvarlak */
+    .product-card .input-group .add-to-cart-btn:last-child {
+        border-radius: 0 0 25px 25px !important;
+    }
+}
+
+.quantity-decrease-btn,
+.quantity-increase-btn {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #4a7c2a;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.quantity-decrease-btn:hover,
+.quantity-increase-btn:hover {
+    background: #4a7c2a;
+    color: white;
+}
+
+.quantity-input {
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    color: #2d3a32;
+    width: 35px;
+    outline: none;
+}
+
+/* Input okları kaldır */
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.quantity-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .add-to-cart-btn {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .product-card .input-group {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* ========================================
+   GENEL STİLLER
+======================================== */
+
+/* Body Stili */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container Padding */
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 576px) {
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+/* ========================================
+   MOBİL MENÜ UX İYİLEŞTİRMELERİ
+======================================== */
+
+/* Mobil Menü Açıkken Arka Plan Kaymasını Engelleyen Sınıf */
+.body-no-scroll {
+    overflow: hidden;
+}
+
+/* ========================================
+   YENİ HAKKIMIZDA SAYFASI STİLLERİ
+======================================== */
+
+/* Section Title */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2d5016;
+}
+
+/* Feature Box */
+.feature-box {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.1);
+    border-color: #4a7c2a;
+}
+
+.feature-icon {
+    margin-bottom: 1rem;
+}
+
+.feature-icon i {
+    font-size: 2.5rem;
+    color: #4a7c2a;
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover .feature-icon i {
+    transform: scale(1.1);
+    color: #2d5016;
+}
+
+.feature-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 1rem;
+}
+
+.feature-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Species Card */
+.species-card {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.species-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.1);
+}
+
+.species-card img {
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.species-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 1rem;
+}
+
+.species-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsive Hakkımızda Stilleri */
+@media (max-width: 991.98px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .feature-icon i {
+        font-size: 2rem;
+    }
+
+    .feature-title {
+        font-size: 1.1rem;
+    }
+
+    .species-title {
+        font-size: 1.2rem;
+    }
+
+    .species-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .feature-box {
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-icon i {
+        font-size: 1.8rem;
+    }
+
+    .feature-title {
+        font-size: 1rem;
+    }
+
+    .feature-text {
+        font-size: 0.9rem;
+    }
+
+    .species-card {
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .species-card img {
+        max-height: 150px;
+    }
+
+    .species-title {
+        font-size: 1.1rem;
+    }
+
+    .species-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   SÜLÜK REHBERİ (ACCORDION) STİLLERİ
+======================================== */
+
+/* Accordion Genel Yapısı */
+.custom-accordion .accordion-item {
+    border: 1px solid rgba(45, 80, 22, 0.1);
+    border-radius: 10px !important;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.custom-accordion .accordion-item:hover {
+    box-shadow: 0 5px 15px rgba(45, 80, 22, 0.08);
+    border-color: rgba(45, 80, 22, 0.2);
+}
+
+/* Accordion Butonu (Kapalı Durum) */
+.custom-accordion .accordion-button {
+    background-color: #fff;
+    color: #2d5016;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1.25rem 1.5rem;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.custom-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(45, 80, 22, 0.1);
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    background-color: #e9f7ef;
+    /* Açık yeşil arka plan */
+    color: #2d5016;
+    box-shadow: none;
+}
+
+/* Accordion İkonu Rengi */
+.custom-accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232d5016'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transition: transform 0.3s ease;
+}
+
+.custom-accordion .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232d5016'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* Accordion İçerik Alanı */
+.custom-accordion .accordion-body {
+    padding: 1.5rem;
+    color: #444;
+    /* Koyu gri metin */
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #fff;
+    border-top: 1px solid rgba(45, 80, 22, 0.05);
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 767.98px) {
+    .custom-accordion .accordion-button {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .custom-accordion .accordion-body {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* ========================================
+   FLOATING DISCOVER BUTON STİLLERİ (Ana Sayfa)
+======================================== */
+.floating-discover-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1040;
+    background-color: #2d5016;
+    color: #fff !important;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: pulse-animation-green 2s infinite;
+}
+
+.floating-discover-btn i {
+    font-size: 1.2rem;
+}
+
+.floating-discover-btn:hover {
+    background-color: #4a7c2a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse-animation-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 42, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(74, 124, 42, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 124, 42, 0);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .floating-discover-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 16px;
+        font-size: 1rem;
+    }
+}
