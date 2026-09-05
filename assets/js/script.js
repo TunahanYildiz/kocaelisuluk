@@ -501,3 +501,22 @@ document.addEventListener('click', function(event) {
         bsCollapse.hide();
     }
 });
+
+// ========================================
+// WHATSAPP DÖNÜŞÜM & SİPARİŞ TIKLAMA TAKİBİ
+// ========================================
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            try {
+                const today = new Date().toISOString().slice(0, 10);
+                const storageKey = 'ks_wa_clicks_' + today;
+                const currentClicks = parseInt(localStorage.getItem(storageKey) || '0') + 1;
+                localStorage.setItem(storageKey, currentClicks);
+                console.log('📊 [Kocaeli Sülük Analitik] WhatsApp sipariş tıklaması kaydedildi. Bugünkü toplam:', currentClicks);
+            } catch (e) {
+                // local storage kota veya gizli sekme koruması
+            }
+        });
+    });
+});
