@@ -152,8 +152,9 @@ function updateCartUI() {
         
         // Toplam tutarı hesapla
         const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+        const finalPrice = (totalPrice > 0 && totalPrice < 2500) ? (totalPrice + 200) : totalPrice;
         if (cartTotalPrice) {
-            cartTotalPrice.textContent = totalPrice.toFixed(2) + ' TL';
+            cartTotalPrice.textContent = finalPrice.toFixed(2) + ' TL';
         }
         if (checkoutBtn) {
             checkoutBtn.disabled = false;
@@ -194,8 +195,11 @@ function generateWhatsAppMessage() {
     });
     
     const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-    message += `Toplam Tutar: ${totalPrice.toFixed(2)} TL`;
-  
+    const finalTotal = (totalPrice > 0 && totalPrice < 2500) ? (totalPrice + 200) : totalPrice;
+    message += `Toplam Tutar: ${finalTotal.toFixed(2)} TL\n`;
+    if (totalPrice >= 2500) {
+        message += `🎁 Ücretsiz Kargo\n`;
+    }
     
     return message;
 }
