@@ -36,6 +36,83 @@
 
     <!-- Bizim Özel Stil Dosyamız (Bootstrap'ten SONRA gelmeli) -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Schema.org ContactPage & BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ana Sayfa",
+              "item": "https://kocaelisuluk.com.tr/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "İletişim & Konum",
+              "item": "https://kocaelisuluk.com.tr/iletisim"
+            }
+          ]
+        },
+        {
+          "@type": "ContactPage",
+          "name": "İletişim & Konum - Kocaeli Sülük Satışı",
+          "url": "https://kocaelisuluk.com.tr/iletisim",
+          "description": "Kocaeli, Darıca ve Gebze tıbbi sülük satışı iletişim bilgileri, elden teslimat konumu ve WhatsApp sipariş hattı.",
+          "inLanguage": "tr-TR",
+          "mainEntity": {
+            "@type": "HealthAndBeautyBusiness",
+            "@id": "https://kocaelisuluk.com.tr/#business",
+            "name": "Kocaeli Tıbbi Sülük Satışı - Yerli Doğal Verbana",
+            "url": "https://kocaelisuluk.com.tr/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://kocaelisuluk.com.tr/assets/images/logom_2.webp"
+            },
+            "image": "https://kocaelisuluk.com.tr/assets/images/golet_4.webp",
+            "telephone": "+90-551-948-22-74",
+            "email": "suluktoptan@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Nenehatun Mah. Battalgazi Cad. No:2",
+              "addressLocality": "Darıca",
+              "addressRegion": "Kocaeli",
+              "addressCountry": "TR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 40.7764146,
+              "longitude": 29.3827489
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "08:00",
+              "closes": "22:00"
+            },
+            "hasMap": "https://www.google.com/maps/place/Kocaeli+T%C4%B1bbi+S%C3%BCl%C3%BCk+Sat%C4%B1%C5%9F%C4%B1+-+Yerli+Do%C4%9Fal+Verbana/@40.7764146,29.3827489,19.83z",
+            "sameAs": [
+              "https://www.google.com/maps/place/Kocaeli+T%C4%B1bbi+S%C3%BCl%C3%BCk+Sat%C4%B1%C5%9F%C4%B1+-+Yerli+Do%C4%9Fal+Verbana/@40.7764146,29.3827489,19.83z",
+              "https://www.instagram.com/kocaeli_suluk_hacamat/"
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>

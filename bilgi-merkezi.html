@@ -32,6 +32,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Schema.org CollectionPage & BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ana Sayfa",
+              "item": "https://kocaelisuluk.com.tr/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Bilgi Merkezi & Tedavi Rehberleri",
+              "item": "https://kocaelisuluk.com.tr/bilgi-merkezi"
+            }
+          ]
+        },
+        {
+          "@type": "CollectionPage",
+          "name": "Sülük Tedavisi & Hirudoterapi Bilgi Merkezi",
+          "url": "https://kocaelisuluk.com.tr/bilgi-merkezi",
+          "description": "Sülük tedavisi (hirudoterapi) uygulama alanları, varis, eklem kireçlenmesi, hacamat ile sülük kombinasyonu ve sülük bakımı hakkında rehberler.",
+          "inLanguage": "tr-TR",
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Sülük Bakımı, Saklama ve Sıkça Sorulan Sorular",
+                "url": "https://kocaelisuluk.com.tr/rehber"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Verbana Sülük Nedir? Medicinalis ile Farkı",
+                "url": "https://kocaelisuluk.com.tr/hirudo-verbana-suluk"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Varis Tedavisinde Sülük Nasıl Uygulanır?",
+                "url": "https://kocaelisuluk.com.tr/varis-suluk-tedavisi"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Hacamat ve Sülük Birlikte Nasıl Uygulanır?",
+                "url": "https://kocaelisuluk.com.tr/hacamat-ve-suluk"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Diz Kireçlenmesi ve Eklem Ağrılarında Sülük Tedavisi",
+                "url": "https://kocaelisuluk.com.tr/diz-kireclenmesi-suluk-tedavisi"
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>

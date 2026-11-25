@@ -37,47 +37,393 @@
     <!-- Bizim Özel Stil Dosyamız (Bootstrap'ten SONRA gelmeli) -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Schema.org Product List -->
+    <!-- Schema.org Product List & BreadcrumbList -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
+      "@graph": [
         {
-          "@type": "Product",
-          "position": 1,
-          "name": "Botoks Boy Tıbbi Sülük",
-          "description": "Yüz ve hassas bölgeler için iz bırakmayan en küçük boy tıbbi sülük.",
-          "offers": {
-            "@type": "Offer",
-            "price": "65.00",
-            "priceCurrency": "TRY",
-            "availability": "https://schema.org/InStock"
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ana Sayfa",
+              "item": "https://kocaelisuluk.com.tr/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Ürünler & Fiyatlar",
+              "item": "https://kocaelisuluk.com.tr/urunler"
+            }
+          ]
         },
         {
-          "@type": "Product",
-          "position": 2,
-          "name": "Orta Boy Tıbbi Sülük",
-          "description": "Ağrı, dolaşım ve genel hacamat seansları için en çok tercih edilen tıbbi sülük.",
-          "offers": {
-            "@type": "Offer",
-            "price": "80.00",
-            "priceCurrency": "TRY",
-            "availability": "https://schema.org/InStock"
-          }
-        },
-        {
-          "@type": "Product",
-          "position": 3,
-          "name": "Büyük Boy Tıbbi Sülük",
-          "description": "Varis, diz ve eklem rahatsızlıklarında derin doku tedavisi için büyük boy sülük.",
-          "offers": {
-            "@type": "Offer",
-            "price": "95.00",
-            "priceCurrency": "TRY",
-            "availability": "https://schema.org/InStock"
-          }
+          "@type": "ItemList",
+          "name": "2026 Canlı Verbana Tıbbi Sülük Çeşitleri ve Paketleri",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Product",
+                "name": "Botoks Boy Tıbbi Sülük (%100 Yerli Verbana)",
+                "sku": "KS-BOTOKS-01",
+                "image": "https://kocaelisuluk.com.tr/assets/images/verbana.webp",
+                "description": "Yüz, alın ve hassas bölgeler için iz bırakmayan en küçük boy yerli canlı Hirudo Verbana tıbbi sülük.",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Kocaeli Sülük"
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "url": "https://kocaelisuluk.com.tr/urunler",
+                  "price": "65.00",
+                  "priceCurrency": "TRY",
+                  "priceValidUntil": "2026-12-31",
+                  "availability": "https://schema.org/InStock",
+                  "itemCondition": "https://schema.org/NewCondition",
+                  "seller": {
+                    "@type": "Organization",
+                    "name": "Kocaeli Tıbbi Sülük Satışı - Yerli Doğal Verbana"
+                  },
+                  "shippingDetails": {
+                    "@type": "OfferShippingDetails",
+                    "shippingRate": {
+                      "@type": "MonetaryAmount",
+                      "value": "200.00",
+                      "currency": "TRY"
+                    },
+                    "shippingDestination": {
+                      "@type": "DefinedRegion",
+                      "addressCountry": "TR"
+                    },
+                    "deliveryTime": {
+                      "@type": "ShippingDeliveryTime",
+                      "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 1,
+                        "unitCode": "DAY"
+                      },
+                      "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 1,
+                        "maxValue": 2,
+                        "unitCode": "DAY"
+                      }
+                    }
+                  },
+                  "hasMerchantReturnPolicy": {
+                    "@type": "MerchantReturnPolicy",
+                    "applicableCountry": "TR",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                  }
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Product",
+                "name": "Orta Boy Tıbbi Sülük (%100 Yerli Verbana)",
+                "sku": "KS-ORTA-03",
+                "image": "https://kocaelisuluk.com.tr/assets/images/verbana.webp",
+                "description": "Ağrı, dolaşım, bel/boyun ve genel hacamat seansları için en çok tercih edilen yerli canlı Hirudo Verbana tıbbi sülük.",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Kocaeli Sülük"
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "url": "https://kocaelisuluk.com.tr/urunler",
+                  "price": "80.00",
+                  "priceCurrency": "TRY",
+                  "priceValidUntil": "2026-12-31",
+                  "availability": "https://schema.org/InStock",
+                  "itemCondition": "https://schema.org/NewCondition",
+                  "seller": {
+                    "@type": "Organization",
+                    "name": "Kocaeli Tıbbi Sülük Satışı - Yerli Doğal Verbana"
+                  },
+                  "shippingDetails": {
+                    "@type": "OfferShippingDetails",
+                    "shippingRate": {
+                      "@type": "MonetaryAmount",
+                      "value": "200.00",
+                      "currency": "TRY"
+                    },
+                    "shippingDestination": {
+                      "@type": "DefinedRegion",
+                      "addressCountry": "TR"
+                    },
+                    "deliveryTime": {
+                      "@type": "ShippingDeliveryTime",
+                      "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 1,
+                        "unitCode": "DAY"
+                      },
+                      "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 1,
+                        "maxValue": 2,
+                        "unitCode": "DAY"
+                      }
+                    }
+                  },
+                  "hasMerchantReturnPolicy": {
+                    "@type": "MerchantReturnPolicy",
+                    "applicableCountry": "TR",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                  }
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "Product",
+                "name": "Büyük Boy Tıbbi Sülük (%100 Yerli Verbana)",
+                "sku": "KS-BUYUK-04",
+                "image": "https://kocaelisuluk.com.tr/assets/images/verbana.webp",
+                "description": "Varis, diz kireçlenmesi ve derin doku eklem tedavilerinde yüksek emiş kapasiteli yerli canlı Hirudo Verbana tıbbi sülük.",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Kocaeli Sülük"
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "url": "https://kocaelisuluk.com.tr/urunler",
+                  "price": "95.00",
+                  "priceCurrency": "TRY",
+                  "priceValidUntil": "2026-12-31",
+                  "availability": "https://schema.org/InStock",
+                  "itemCondition": "https://schema.org/NewCondition",
+                  "seller": {
+                    "@type": "Organization",
+                    "name": "Kocaeli Tıbbi Sülük Satışı - Yerli Doğal Verbana"
+                  },
+                  "shippingDetails": {
+                    "@type": "OfferShippingDetails",
+                    "shippingRate": {
+                      "@type": "MonetaryAmount",
+                      "value": "200.00",
+                      "currency": "TRY"
+                    },
+                    "shippingDestination": {
+                      "@type": "DefinedRegion",
+                      "addressCountry": "TR"
+                    },
+                    "deliveryTime": {
+                      "@type": "ShippingDeliveryTime",
+                      "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 1,
+                        "unitCode": "DAY"
+                      },
+                      "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 1,
+                        "maxValue": 2,
+                        "unitCode": "DAY"
+                      }
+                    }
+                  },
+                  "hasMerchantReturnPolicy": {
+                    "@type": "MerchantReturnPolicy",
+                    "applicableCountry": "TR",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                  }
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "Product",
+                "name": "Standart Şifa Paketi (32 Adet Orta Boy Verbana)",
+                "sku": "KS-PKG-STD32",
+                "image": "https://kocaelisuluk.com.tr/assets/images/verbana_2.webp",
+                "description": "32 adet orta boy yerli canlı Verbana sülük içeren, Türkiye geneli ücretsiz canlı kargolu şifa paketi.",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Kocaeli Sülük"
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "url": "https://kocaelisuluk.com.tr/urunler",
+                  "price": "2560.00",
+                  "priceCurrency": "TRY",
+                  "priceValidUntil": "2026-12-31",
+                  "availability": "https://schema.org/InStock",
+                  "itemCondition": "https://schema.org/NewCondition",
+                  "seller": {
+                    "@type": "Organization",
+                    "name": "Kocaeli Tıbbi Sülük Satışı - Yerli Doğal Verbana"
+                  },
+                  "shippingDetails": {
+                    "@type": "OfferShippingDetails",
+                    "shippingRate": {
+                      "@type": "MonetaryAmount",
+                      "value": "0.00",
+                      "currency": "TRY"
+                    },
+                    "shippingDestination": {
+                      "@type": "DefinedRegion",
+                      "addressCountry": "TR"
+                    },
+                    "deliveryTime": {
+                      "@type": "ShippingDeliveryTime",
+                      "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 1,
+                        "unitCode": "DAY"
+                      },
+                      "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 1,
+                        "maxValue": 2,
+                        "unitCode": "DAY"
+                      }
+                    }
+                  },
+                  "hasMerchantReturnPolicy": {
+                    "@type": "MerchantReturnPolicy",
+                    "applicableCountry": "TR",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                  }
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "Product",
+                "name": "Karma Güç Paketi (20 Orta + 10 Büyük Boy Verbana)",
+                "sku": "KS-PKG-KARMA30",
+                "image": "https://kocaelisuluk.com.tr/assets/images/verbana_2.webp",
+                "description": "20 orta boy ve 10 büyük boy yerli canlı Verbana sülükten oluşan, varis ve genel tedaviye uygun ücretsiz kargolu paket.",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Kocaeli Sülük"
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "url": "https://kocaelisuluk.com.tr/urunler",
+                  "price": "2550.00",
+                  "priceCurrency": "TRY",
+                  "priceValidUntil": "2026-12-31",
+                  "availability": "https://schema.org/InStock",
+                  "itemCondition": "https://schema.org/NewCondition",
+                  "seller": {
+                    "@type": "Organization",
+                    "name": "Kocaeli Tıbbi Sülük Satışı - Yerli Doğal Verbana"
+                  },
+                  "shippingDetails": {
+                    "@type": "OfferShippingDetails",
+                    "shippingRate": {
+                      "@type": "MonetaryAmount",
+                      "value": "0.00",
+                      "currency": "TRY"
+                    },
+                    "shippingDestination": {
+                      "@type": "DefinedRegion",
+                      "addressCountry": "TR"
+                    },
+                    "deliveryTime": {
+                      "@type": "ShippingDeliveryTime",
+                      "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 1,
+                        "unitCode": "DAY"
+                      },
+                      "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 1,
+                        "maxValue": 2,
+                        "unitCode": "DAY"
+                      }
+                    }
+                  },
+                  "hasMerchantReturnPolicy": {
+                    "@type": "MerchantReturnPolicy",
+                    "applicableCountry": "TR",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                  }
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "Product",
+                "name": "Yüz & Vücut Paketi (20 Orta + 15 Botoks Boy Verbana)",
+                "sku": "KS-PKG-YUZ35",
+                "image": "https://kocaelisuluk.com.tr/assets/images/verbana_2.webp",
+                "description": "20 orta boy ve 15 botoks boy yerli canlı Verbana sülük içeren, yüz bakımı ve genel terapi için ücretsiz kargolu paket.",
+                "brand": {
+                  "@type": "Brand",
+                  "name": "Kocaeli Sülük"
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "url": "https://kocaelisuluk.com.tr/urunler",
+                  "price": "2575.00",
+                  "priceCurrency": "TRY",
+                  "priceValidUntil": "2026-12-31",
+                  "availability": "https://schema.org/InStock",
+                  "itemCondition": "https://schema.org/NewCondition",
+                  "seller": {
+                    "@type": "Organization",
+                    "name": "Kocaeli Tıbbi Sülük Satışı - Yerli Doğal Verbana"
+                  },
+                  "shippingDetails": {
+                    "@type": "OfferShippingDetails",
+                    "shippingRate": {
+                      "@type": "MonetaryAmount",
+                      "value": "0.00",
+                      "currency": "TRY"
+                    },
+                    "shippingDestination": {
+                      "@type": "DefinedRegion",
+                      "addressCountry": "TR"
+                    },
+                    "deliveryTime": {
+                      "@type": "ShippingDeliveryTime",
+                      "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 0,
+                        "maxValue": 1,
+                        "unitCode": "DAY"
+                      },
+                      "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 1,
+                        "maxValue": 2,
+                        "unitCode": "DAY"
+                      }
+                    }
+                  },
+                  "hasMerchantReturnPolicy": {
+                    "@type": "MerchantReturnPolicy",
+                    "applicableCountry": "TR",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                  }
+                }
+              }
+            }
+          ]
         }
       ]
     }

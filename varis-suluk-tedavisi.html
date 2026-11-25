@@ -33,26 +33,61 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Article Schema -->
+    <!-- Schema.org Article & BreadcrumbList -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Varis Tedavisinde Sülük Nasıl Uygulanır?",
-      "description": "Varis ve bacak dolaşımı rahatsızlıklarında tıbbi sülük uygulaması rehberi.",
-      "image": "https://kocaelisuluk.com.tr/assets/images/verbana_2.webp",
-      "author": {
-        "@type": "Organization",
-        "name": "Kocaeli Sülük"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Kocaeli Sülük",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://kocaelisuluk.com.tr/assets/images/logom_2.png"
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ana Sayfa",
+              "item": "https://kocaelisuluk.com.tr/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Bilgi Merkezi",
+              "item": "https://kocaelisuluk.com.tr/bilgi-merkezi"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Varis Tedavisinde Sülük",
+              "item": "https://kocaelisuluk.com.tr/varis-suluk-tedavisi"
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "Varis Tedavisinde Sülük Nasıl Uygulanır?",
+          "description": "Varis ve bacak dolaşımı rahatsızlıklarında tıbbi sülük uygulaması, seans aralıkları ve uygun boy rehberi.",
+          "image": "https://kocaelisuluk.com.tr/assets/images/verbana_2.webp",
+          "inLanguage": "tr-TR",
+          "datePublished": "2026-09-06",
+          "dateModified": "2026-11-25",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://kocaelisuluk.com.tr/varis-suluk-tedavisi"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Kocaeli Sülük",
+            "url": "https://kocaelisuluk.com.tr/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Kocaeli Sülük",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://kocaelisuluk.com.tr/assets/images/logom_2.webp"
+            }
+          }
         }
-      }
+      ]
     }
     </script>
 </head>
