@@ -101,6 +101,17 @@
 
 <body>
 
+    <!-- Üst Duyuru Bandı -->
+    <div class="top-announcement-bar">
+        <div class="container d-flex justify-content-center align-items-center flex-wrap gap-2">
+            <span class="d-none d-md-inline"><i class="bi bi-box-seam me-1 text-warning"></i> <strong>Türkiye Geneli Canlı Garantili Kargo</strong></span>
+            <span class="d-none d-md-inline opacity-50">|</span>
+            <span><span class="badge-free-shipping">KAMPANYA</span> <strong>2.500 TL Üzeri Kargo ÜCRETSİZ!</strong></span>
+            <span class="d-none d-md-inline opacity-50">|</span>
+            <span class="d-none d-md-inline"><i class="bi bi-geo-alt-fill me-1 text-warning"></i> <strong>Gebze & Darıca İçi Elden Hızlı Teslimat</strong></span>
+        </div>
+    </div>
+
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light custom-navbar sticky-top">
         <div class="container">
@@ -233,7 +244,7 @@
 
                 <div class="row justify-content-center">
                     <!-- Botoks -->
-                    <div class="col-lg-4 col-md-4 col-6 mb-3">
+                    <div class="col-lg-4 col-md-6 col-12 mb-3">
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="assets/images/verbana.webp" alt="Gebze Botoks Boy Tıbbi Sülük" class="img-fluid" loading="lazy" decoding="async" width="280" height="210">
@@ -257,7 +268,7 @@
                     </div>
 
                     <!-- Orta -->
-                    <div class="col-lg-4 col-md-4 col-6 mb-3">
+                    <div class="col-lg-4 col-md-6 col-12 mb-3">
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="assets/images/verbana.webp" alt="Gebze Orta Boy Tıbbi Sülük" class="img-fluid" loading="lazy" decoding="async" width="280" height="210">
@@ -281,7 +292,7 @@
                     </div>
 
                     <!-- Büyük -->
-                    <div class="col-lg-4 col-md-4 col-6 mb-3">
+                    <div class="col-lg-4 col-md-6 col-12 mb-3">
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="assets/images/verbana.webp" alt="Gebze Büyük Boy Tıbbi Sülük" class="img-fluid" loading="lazy" decoding="async" width="280" height="210">
@@ -436,12 +447,32 @@
     <footer class="footer-section">
         <div class="container">
             <div class="row">
+                <!-- Sol Sütun - Logo & Açıklama -->
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="footer-title">Kocaeli Sülük</h5>
-                    <p class="footer-description">Gebze ve tüm Kocaeli bölgesine doğal gölet ortamında yetişen en kaliteli tıbbi sülükleri sunuyoruz.</p>
+                    <p class="footer-title fw-bold">Kocaeli Sülük</p>
+                    <p class="footer-description">Kocaeli, Darıca, Gebze ve tüm Türkiye'ye doğal gölet ortamında yetişen %100 yerli canlı Verbana tıbbi sülükleri sunuyoruz.</p>
+                    <div class="footer-social mt-3 d-flex gap-2">
+                        <a href="https://wa.me/905519482274" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light rounded-circle" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/kocaeli_suluk_hacamat/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light rounded-circle" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <h5 class="footer-title">Hizmet Bölgelerimiz</h5>
+
+                <!-- 2. Sütun - Hızlı Menü -->
+                <div class="col-lg-3 col-md-6 col-6 mb-3">
+                    <p class="footer-title fw-bold">Hızlı Menü</p>
+                    <ul class="footer-links">
+                        <li><a href="/">Kocaeli Sülük Ana Sayfa</a></li>
+                        <li><a href="/urunler">Tüm Boylar & Güncel Fiyatlar</a></li>
+                        <li><a href="/toptan-suluk">Klinik & Toplu Alım</a></li>
+                        <li><a href="/bilgi-merkezi">Tedavi Rehberleri</a></li>
+                        <li><a href="/rehber">Sülük Bakım Rehberi</a></li>
+                        <li><a href="/iletisim">İletişim & Konum</a></li>
+                    </ul>
+                </div>
+
+                <!-- 3. Sütun - Hizmet Bölgelerimiz -->
+                <div class="col-lg-3 col-md-6 col-6 mb-3">
+                    <p class="footer-title fw-bold">Hizmet Bölgelerimiz</p>
                     <ul class="footer-links">
                         <li><a href="/darica-suluk-satisi">Darıca Sülük Satışı</a></li>
                         <li><a href="/gebze-suluk-satisi">Gebze Sülük Satışı</a></li>
@@ -450,17 +481,36 @@
                         <li><a href="/tuzla-pendik-suluk-satisi">Tuzla & Pendik Sülük</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-12 mb-4">
-                    <h5 class="footer-title">Bize Ulaşın</h5>
+
+                <!-- 4. Sütun - İletişim -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <p class="footer-title fw-bold">Bize Ulaşın</p>
                     <ul class="footer-contact">
-                        <li><i class="bi bi-geo-alt-fill"></i> <a href="https://www.google.com/maps/place/Kocaeli+T%C4%B1bbi+S%C3%BCl%C3%BCk+Sat%C4%B1%C5%9F%C4%B1+-+Yerli+Do%C4%9Fal+Verbana/@40.7764146,29.3827489,19.83z" target="_blank" style="color: inherit; text-decoration: none;">Darıca / Kocaeli (Haritada Aç)</a></li>
-                        <li><i class="bi bi-telephone-fill"></i> <span>+90 551 948 22 74</span></li>
-                        <li><i class="bi bi-envelope-fill"></i> <span>suluktoptan@gmail.com</span></li>
+                        <li>
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <a href="https://www.google.com/maps/place/Kocaeli+T%C4%B1bbi+S%C3%BCl%C3%BCk+Sat%C4%B1%C5%9F%C4%B1+-+Yerli+Do%C4%9Fal+Verbana/@40.7764146,29.3827489,19.83z" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                Darıca / Kocaeli (Haritada Aç)
+                            </a>
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone-fill"></i>
+                            <a href="tel:+905519482274" style="color: inherit; text-decoration: none;">+90 551 948 22 74</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope-fill"></i>
+                            <span>suluktoptan@gmail.com</span>
+                        </li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Copyright Alanı -->
             <div class="footer-divider"></div>
-            <p class="footer-copyright text-center">© 2025 - 2026 Kocaeli Sülük. Tüm Hakları Saklıdır.</p>
+            <div class="row">
+                <div class="col-12">
+                    <p class="footer-copyright text-center">© 2025 - 2026 Kocaeli Sülük. Tüm Hakları Saklıdır.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
