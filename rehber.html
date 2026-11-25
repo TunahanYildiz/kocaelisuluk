@@ -225,6 +225,64 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
+                        <!-- Hızlı Başvuru: Evde Bakım & Güvenlik Özeti -->
+                        <div class="card border-0 shadow-sm rounded-3 mb-4 overflow-hidden">
+                            <div class="card-header bg-success text-white fw-bold py-3">
+                                <i class="bi bi-clipboard2-check me-2"></i>Hızlı Başvuru: Evde Sülük Bakımı &amp; Güvenlik Özeti
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered mb-0 align-middle small">
+                                    <tbody>
+                                        <tr>
+                                            <th class="bg-light px-3 py-2" style="width: 32%;">Su Seçimi</th>
+                                            <td class="px-3 py-2">Yalnızca <strong>klorsuz içme suyu</strong> veya 48 saat dinlendirilmiş çeşme suyu (10°C – 18°C).</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light px-3 py-2">Su Değişim Sıklığı</th>
+                                            <td class="px-3 py-2">Yaz aylarında <strong>her gün</strong>, kışın serin odada <strong>2–3 günde bir</strong> (ani ısı şoku olmadan).</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light px-3 py-2">Kavanoz &amp; Kapatma</th>
+                                            <td class="px-3 py-2">1 litre suya en fazla 15–20 sülük; ağız kısmı <strong>hava alan tülbent + çift lastik</strong> ile sabitlenir.</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light px-3 py-2">Türkiye Geneli Kargo</th>
+                                            <td class="px-3 py-2">81 ile termal strafor paketle 1–3 günde teslimat. <strong>2.500 TL üzeri kargo ücretsiz</strong>, altı 200 TL.</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light px-3 py-2">Tek Kullanımlık Kuralı</th>
+                                            <td class="px-3 py-2">Her tıbbi sülük <strong>yalnızca tek kişide ve tek seansta</strong> kullanılır; beslenmez ve tekrar kullanılmaz.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Yeni Detaylı Rehberlere Hızlı Geçiş -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <a href="/suluk-nasil-saklanir" class="card h-100 border shadow-sm text-decoration-none text-dark rounded-3 p-3">
+                                    <div class="text-success mb-1"><i class="bi bi-droplet-half fs-4"></i></div>
+                                    <div class="fw-bold small">Evde Sülük Saklama</div>
+                                    <div class="text-muted" style="font-size: 0.8rem;">İlk 15 dakika, su değişimi ve 5 kritik hata.</div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/canli-suluk-kargo" class="card h-100 border shadow-sm text-decoration-none text-dark rounded-3 p-3">
+                                    <div class="text-success mb-1"><i class="bi bi-truck fs-4"></i></div>
+                                    <div class="fw-bold small">81 İle Canlı Kargo</div>
+                                    <div class="text-muted" style="font-size: 0.8rem;">Bölgesel süre tablosu, paketleme ve garanti.</div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="/suluk-boylari-rehberi" class="card h-100 border shadow-sm text-decoration-none text-dark rounded-3 p-3">
+                                    <div class="text-success mb-1"><i class="bi bi-rulers fs-4"></i></div>
+                                    <div class="fw-bold small">Sülük Boyları Rehberi</div>
+                                    <div class="text-muted" style="font-size: 0.8rem;">Botoks (65 TL), Orta (80 TL), Büyük (95 TL).</div>
+                                </a>
+                            </div>
+                        </div>
+
                         <div class="accordion custom-accordion" id="faqAccordion">
 
                             <!-- Item 1 -->
@@ -409,7 +467,7 @@
 
                         <!-- Hastalık Tedavi Rehberleri Geçiş Kartı -->
                         <div class="card border-0 bg-light p-4 rounded-3 text-center mt-5 shadow-sm">
-                            <h5 class="fw-bold mb-2">Hastalık ve Tedavi Odaklı Rehberlerimizi İncelediniz mi?</h5>
+                            <div class="h5 fw-bold mb-2">Hastalık ve Tedavi Odaklı Rehberlerimizi İncelediniz mi?</div>
                             <p class="text-muted small mb-3">Varis tedavisi, menisküs & kireçlenme ve hacamat-sülük kombinasyonuna özel hazırladığımız uzman rehberleri okuyabilirsiniz.</p>
                             <div>
                                 <a href="/bilgi-merkezi" class="btn btn-outline-success px-4 py-2 rounded-pill fw-bold">
@@ -526,7 +584,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="cartModalLabel">Alışveriş Sepetiniz</h5>
+                    <div class="modal-title h5 fw-bold" id="cartModalLabel">Alışveriş Sepetiniz</div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="cart-modal-body">
@@ -535,7 +593,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="w-100">
-                        <h5 class="text-end mb-3">Toplam Tutar: <span id="cart-total-price">0.00 TL</span></h5>
+                        <div class="h5 text-end mb-3 fw-bold">Toplam Tutar: <span id="cart-total-price">0.00 TL</span></div>
                         <button type="button" class="btn btn-secondary" id="continue-shopping-btn">Alışverişe Devam
                             Et</button>
                         <button type="button" class="btn btn-success" id="checkout-whatsapp-btn">WhatsApp ile Siparişi
