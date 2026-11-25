@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
 # AI & Search LLM Crawlers
@@ -18,5 +18,3 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://kocaelisuluk.com.tr/sitemap.xml
-# LLM Context File
-# LLMs: https://kocaelisuluk.com.tr/llms.txt

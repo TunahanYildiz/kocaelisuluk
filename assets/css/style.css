@@ -14,8 +14,8 @@
 .navbar-cart-section {
     display: flex;
     align-items: center;
-    z-index: 1050;
-    /* Hamburger menünün üstünde kalması için */
+    z-index: 1030;
+    /* Hamburger menünün üstünde, modalın altında kalması için */
     margin-left: auto;
 }
 
@@ -1707,6 +1707,10 @@
 ======================================== */
 
 /* Modal genel stilleri */
+#cartModal {
+    z-index: 1065;
+}
+
 #cartModal .modal-content {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -1732,8 +1736,37 @@
 /* Modal body stilleri */
 #cartModal .modal-body {
     padding: 1.5rem;
-    max-height: 400px;
+    max-height: 60vh;
     overflow-y: auto;
+}
+
+/* Teslimat seçici ve tutar özeti */
+#cartModal .cart-delivery-option {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.7rem 0.85rem;
+    border: 1.5px solid #dee2e6;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 100%;
+}
+
+#cartModal .cart-delivery-option:hover {
+    border-color: #4a7c2a;
+    background-color: #f8fbf6;
+}
+
+#cartModal .cart-delivery-option.active {
+    border-color: #2d5016;
+    background-color: #eef7e9;
+    box-shadow: 0 2px 8px rgba(45, 80, 22, 0.1);
+}
+
+#cartModal .cart-delivery-option .form-check-input {
+    margin-top: 0.25rem;
+    flex-shrink: 0;
 }
 
 /* Cart item stilleri */
@@ -2470,7 +2503,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    z-index: 1060;
+    z-index: 1040;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: wa-pulse 2.5s infinite;
 }
@@ -2762,7 +2795,7 @@ body {
     padding: 9px 12px;
     text-align: center;
     position: relative;
-    z-index: 1060;
+    z-index: 1030;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
