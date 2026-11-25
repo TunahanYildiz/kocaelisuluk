@@ -27,3 +27,5 @@
 ## Optional
 - [Hakkımızda](https://kocaelisuluk.com.tr/hakkimizda): İşletme hikayemiz, hijyen ve tek kullanımlık standartlarımız
 - [İletişim ve Konum](https://kocaelisuluk.com.tr/iletisim): Darıca adres tarifi, Google Haritalar konumu ve telefon/WhatsApp hattı
+- [Canlı Teslimat ve Telafi Koşulları](https://kocaelisuluk.com.tr/teslimat-garantisi): 81 ile kargo şartları, elden teslim ve canlı teslimat garantisi
+- [KVKK ve Gizlilik Politikası](https://kocaelisuluk.com.tr/kvkk-gizlilik): Kişisel verilerin korunması ve gizlilik bilgilendirmesi
