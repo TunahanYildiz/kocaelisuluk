@@ -2467,8 +2467,18 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
-    animation: pulse-animation-green 2s infinite;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-discover-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    border: 2px solid rgba(74, 124, 42, 0.65);
+    pointer-events: none;
+    will-change: transform, opacity;
+    animation: gpu-pulse-ring 2.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
 }
 
 .floating-discover-btn i {
@@ -2478,20 +2488,30 @@ body {
 .floating-discover-btn:hover {
     background-color: #4a7c2a;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes pulse-animation-green {
+@keyframes gpu-pulse-ring {
     0% {
-        box-shadow: 0 0 0 0 rgba(74, 124, 42, 0.7);
+        transform: scale(1);
+        opacity: 0.75;
     }
 
     70% {
-        box-shadow: 0 0 0 10px rgba(74, 124, 42, 0);
+        transform: scale(1.16);
+        opacity: 0;
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(74, 124, 42, 0);
+        transform: scale(1.16);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-discover-btn::after,
+    .floating-whatsapp-btn::after {
+        animation: none;
+        display: none;
     }
 }
 
@@ -2509,7 +2529,7 @@ body {
    FAZ 1 YENİ STİLLER (GÜVEN, MOBİL & DÖNÜŞÜM)
    ======================================== */
 
-/* Sabit WhatsApp Butonu (Floating WhatsApp CTA) */
+/* Sabit WhatsApp Butonu (Floating WhatsApp CTA - GPU Composited) */
 .floating-whatsapp-btn {
     position: fixed;
     bottom: 25px;
@@ -2526,8 +2546,18 @@ body {
     align-items: center;
     gap: 10px;
     z-index: 1040;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: wa-pulse 2.5s infinite;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.25s ease;
+}
+
+.floating-whatsapp-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    border: 2px solid rgba(37, 211, 102, 0.7);
+    pointer-events: none;
+    will-change: transform, opacity;
+    animation: gpu-pulse-ring 2.5s cubic-bezier(0.24, 0, 0.38, 1) infinite;
 }
 
 .floating-whatsapp-btn i {
@@ -2538,19 +2568,6 @@ body {
     background-color: #1eb856;
     color: #fff;
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
-}
-
-@keyframes wa-pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
 }
 
 @media (max-width: 767.98px) {
@@ -2716,70 +2733,23 @@ body {
     font-size: 1.1rem;
 }
 
-/* Müşteri Değerlendirmeleri (Testimonials) */
-.reviews-section {
-    background: #fdfdfd;
-    padding: 60px 0;
+/* P2: Erişilebilirlik — WCAG AAA yüksek kontrastlı rozet stilleri */
+.badge.text-info {
+    color: #055160 !important;
+    background-color: #cff4fc !important;
 }
 
-.review-card {
-    background: #fff;
-    border-radius: 14px;
-    padding: 24px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    border: 1px solid #edf2eb;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.badge.text-primary {
+    color: #084298 !important;
+    background-color: #cfe2ff !important;
 }
 
-.review-stars {
-    color: #f59e0b;
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+.badge.text-success {
+    color: #0f5132 !important;
 }
 
-.review-text {
-    font-size: 0.92rem;
-    color: #4a5a45;
-    line-height: 1.6;
-    margin-bottom: 16px;
-    flex-grow: 1;
-    font-style: italic;
-}
-
-.review-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-top: 1px solid #f0f4ee;
-    padding-top: 12px;
-}
-
-.review-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #eaf3e6;
-    color: #2d5016;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1rem;
-}
-
-.review-name {
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: #1a330b;
-    margin: 0;
-}
-
-.review-location {
-    font-size: 0.8rem;
-    color: #7a8c75;
-    margin: 0;
+.badge.bg-warning.text-dark {
+    color: #3d2c00 !important;
 }
 
 /* Sıkça Sorulan Sorular (FAQ) */
@@ -2870,10 +2840,11 @@ body {
         padding: 1px 6px;
     }
 
-    /* U5: Mobil dikey uzunluk ve ferahlık optimizasyonu */
+    /* U5 + P4: Mobil dikey uzunluk ve hafif LCP hero görseli */
     .hero-section {
         min-height: auto;
         padding: 26px 0 22px 0;
+        background-image: url('../images/golet_4_mobile.webp');
     }
 
     .hero-content {

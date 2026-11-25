@@ -32,10 +32,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"></noscript>
 
     <!-- Bizim Özel Stil Dosyamız (Bootstrap'ten SONRA gelmeli) -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css?v=20261126">
 
     <!-- Schema.org Product List & BreadcrumbList -->
     <script type="application/ld+json">
@@ -448,7 +449,7 @@
         <div class="container">
             <!-- Logo/Brand -->
             <a class="navbar-brand" href="/">
-                <img src="assets/images/logom_2.webp" alt="Kocaeli Sülük" class="navbar-logo" width="45" height="45">
+                <img src="assets/images/logom_2_nav.webp" alt="" class="navbar-logo" width="46" height="45">
                 <span class="navbar-brand-text">Kocaeli Sülük</span>
             </a>
 
@@ -460,7 +461,7 @@
 
             <!-- Sepet İkonu (Hamburger menüden bağımsız) -->
             <div class="navbar-cart-section">
-                <a href="#" class="nav-link" id="cart-button" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <a href="#" class="nav-link" id="cart-button" aria-label="Alışveriş Sepeti" data-bs-toggle="modal" data-bs-target="#cartModal">
                     <i class="bi bi-cart-fill"></i>
                     <span class="badge rounded-pill bg-danger" id="cart-item-count">0</span>
                 </a>
@@ -514,12 +515,12 @@
                     <div class="col-lg-4 col-md-6 col-12 mb-3">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="assets/images/verbana.webp"
+                                <img src="assets/images/verbana_card.webp"
                                     alt="Botoks boy canlı tıbbi sülük satışı" class="img-fluid" loading="lazy" decoding="async" width="280" height="210">
                             </div>
                             <div class="product-content">
                                 <span class="badge bg-info bg-opacity-10 text-info px-2 py-1 rounded mb-1" style="font-size: 0.72rem;">Yüz & Göz Çevresi</span>
-                                <h3 class="product-title">Botoks Boy</h3>
+                                <h2 class="product-title">Botoks Boy</h2>
                                 <p class="product-description">Yüz, alın ve hassas bölgeler için iz bırakmayan en küçük boy tıbbi sülük.</p>
                                 <div class="text-success small fw-semibold mb-1" style="font-size: 0.72rem;"><i class="bi bi-patch-check-fill me-1"></i>%100 Yerli Canlı Verbana</div>
                                 <div class="product-price">65 TL <small class="text-muted" style="font-size: 0.8rem;">/ Adet</small></div>
@@ -543,12 +544,12 @@
                     <div class="col-lg-4 col-md-6 col-12 mb-3">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="assets/images/verbana.webp"
+                                <img src="assets/images/verbana_card.webp"
                                     alt="Orta boy canlı tıbbi sülük satışı" class="img-fluid" loading="lazy" decoding="async" width="280" height="210">
                             </div>
                             <div class="product-content">
                                 <span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded mb-1" style="font-size: 0.72rem;">Genel Tedavi & Hacamat</span>
-                                <h3 class="product-title">Orta Boy</h3>
+                                <h2 class="product-title">Orta Boy</h2>
                                 <p class="product-description">Ağrı, dolaşım, bel/boyun ve genel vücut tedavilerinde en çok tercih edilen boy.</p>
                                 <div class="text-success small fw-semibold mb-1" style="font-size: 0.72rem;"><i class="bi bi-patch-check-fill me-1"></i>%100 Yerli Canlı Verbana</div>
                                 <div class="product-price">80 TL <small class="text-muted" style="font-size: 0.8rem;">/ Adet</small></div>
@@ -572,12 +573,12 @@
                     <div class="col-lg-4 col-md-6 col-12 mb-3">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="assets/images/verbana.webp"
+                                <img src="assets/images/verbana_card.webp"
                                     alt="Varis ve eklem tedavisi için büyük boy sülük" class="img-fluid" loading="lazy" decoding="async" width="280" height="210">
                             </div>
                             <div class="product-content">
                                 <span class="badge bg-warning bg-opacity-10 text-dark px-2 py-1 rounded mb-1" style="font-size: 0.72rem;">Varis & Eklem</span>
-                                <h3 class="product-title">Büyük Boy</h3>
+                                <h2 class="product-title">Büyük Boy</h2>
                                 <p class="product-description">Varis, diz kireçlenmesi ve derin doku tedavilerinde yoğun emiş güçlü büyük boy.</p>
                                 <div class="text-success small fw-semibold mb-1" style="font-size: 0.72rem;"><i class="bi bi-patch-check-fill me-1"></i>%100 Yerli Canlı Verbana</div>
                                 <div class="product-price">95 TL <small class="text-muted" style="font-size: 0.8rem;">/ Adet</small></div>
@@ -604,7 +605,7 @@
                         <span class="badge bg-warning bg-opacity-25 text-dark px-3 py-2 rounded-pill fw-bold mb-2">
                             <i class="bi bi-gift-fill text-success me-1"></i> 2.500 TL Üzeri Siparişlerde Kargo ÜCRETSİZ!
                         </span>
-                        <h3 class="features-title">Avantajlı Hazır Verbana Şifa Paketleri</h3>
+                        <h2 class="features-title">Avantajlı Hazır Verbana Şifa Paketleri</h2>
                         <p class="text-muted mx-auto" style="max-width: 650px;">
                             En çok tercih edilen kombinasyonlar. Tek tıkla sipariş verin, ücretsiz canlı garantili kargo fırsatından hemen yararlanın.
                         </p>
@@ -678,7 +679,7 @@
                         <div class="col-lg-12">
                             <div class="p-4 bg-light rounded-4 border d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
                                 <div>
-                                    <h5 class="fw-bold mb-1 text-dark"><i class="bi bi-hospital text-success me-2"></i>Klinik ve Uygulayıcılara Özel Toptan Paketler (75 - 100+ Adet)</h5>
+                                    <h3 class="h5 fw-bold mb-1 text-dark"><i class="bi bi-hospital text-success me-2"></i>Klinik ve Uygulayıcılara Özel Toptan Paketler (75 - 100+ Adet)</h3>
                                     <p class="text-muted mb-0 small">75, 100 ve 250 adet üzeri toptan siparişlerinizde özel iskonto, düzenli haftalık gönderim ve termal ambalaj desteği sunuyoruz.</p>
                                 </div>
                                 <div class="d-flex gap-2 flex-shrink-0">
@@ -700,7 +701,7 @@
                                     <div class="d-flex gap-3 align-items-start">
                                         <div class="text-success fs-1"><i class="bi bi-box-seam"></i></div>
                                         <div>
-                                            <h5 class="fw-bold text-dark mb-1">Türkiye Geneli Canlı Garantili Kargo</h5>
+                                            <h3 class="h5 fw-bold text-dark mb-1">Türkiye Geneli Canlı Garantili Kargo</h3>
                                             <p class="text-muted small mb-2">Sülüklerimiz nemli sünger ve hava alabilen özel strafor ambalajlarda yola çıkar. Yolculuk boyunca canlı kalma garantisi veriyoruz.</p>
                                             <span class="badge bg-success bg-opacity-10 text-success fw-bold">2.500 TL ve Üzeri KARGO ÜCRETSİZ</span>
                                         </div>
@@ -710,7 +711,7 @@
                                     <div class="d-flex gap-3 align-items-start">
                                         <div class="text-primary fs-1"><i class="bi bi-geo-alt-fill"></i></div>
                                         <div>
-                                            <h5 class="fw-bold text-dark mb-1">Darıca & Gebze Elden Canlı Teslim</h5>
+                                            <h3 class="h5 fw-bold text-dark mb-1">Darıca & Gebze Elden Canlı Teslim</h3>
                                             <p class="text-muted small mb-2">Bölgemizdeki danışanlarımız adet sınırı olmaksızın teslimat noktamızdan bizzat görerek elden teslim alabilirler.</p>
                                             <a href="https://wa.me/905519482274?text=Merhaba,%20sülükleri%20elden%20teslim%20almak%20için%20konum%20ve%20bilgi%20istiyorum." 
                                                target="_blank" class="btn btn-sm btn-outline-success fw-bold rounded-pill">
@@ -808,10 +809,10 @@
     </footer>
 
     <!-- Bootstrap JS Bundle CDN (Body'nin sonunda olmalı) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- Bizim Özel JS Dosyamız -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.min.js?v=20261126" defer></script>
 
     <!-- Sepet Modal -->
     <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
