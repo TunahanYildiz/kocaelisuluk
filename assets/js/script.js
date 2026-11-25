@@ -1,4 +1,67 @@
 // ========================================
+// ANALİTİK & DÖNÜŞÜM TAKİBİ (O1: GA4 & O2: Clarity)
+// ========================================
+
+const ANALYTICS_CONFIG = {
+    ga4Id: 'G-MYS9TYC3NC',    // Google Analytics 4 Ölçüm Kimliği
+    clarityId: 'zjdccj6118'   // Microsoft Clarity Proje ID
+};
+
+const WHATSAPP_PHONE = '905519482274';
+
+/**
+ * GA4 ve Microsoft Clarity betiklerini yalnızca canlı alan adında yükler
+ */
+function initAnalytics() {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return;
+    }
+    if (ANALYTICS_CONFIG.ga4Id && /^G-[A-Z0-9]+$/i.test(ANALYTICS_CONFIG.ga4Id)) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function() { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', ANALYTICS_CONFIG.ga4Id, { anonymize_ip: true });
+
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ANALYTICS_CONFIG.ga4Id)}`;
+        document.head.appendChild(gaScript);
+    }
+
+    if (ANALYTICS_CONFIG.clarityId && /^[a-z0-9]+$/i.test(ANALYTICS_CONFIG.clarityId)) {
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments); };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = 'https://www.clarity.ms/tag/' + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, 'clarity', 'script', ANALYTICS_CONFIG.clarityId);
+    }
+}
+
+/**
+ * Dönüşüm olaylarını GA4 ve Microsoft Clarity'ye iletir
+ * @param {string} eventName
+ * @param {Object} params
+ */
+function trackEvent(eventName, params) {
+    const payload = Object.assign({ page_path: window.location.pathname }, params || {});
+    try {
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, payload);
+        }
+        if (typeof window.clarity === 'function') {
+            window.clarity('event', eventName);
+        }
+    } catch (e) {
+        // Analitik yüklenmemişse veya engellenmişse sessizce geç
+    }
+}
+
+initAnalytics();
+
+// ========================================
 // SEPET SİSTEMİ YAPILANDIRMASI & FONKSİYONLARI
 // ========================================
 
@@ -373,6 +436,44 @@ function decreaseQuantity(productId) {
     }
 }
 
+/**
+ * Form çıktısını WhatsApp'a yönlendirir ve kopyalanabilir onay kutusu gösterir (O3)
+ */
+function handleWhatsAppFormSubmit(form, feedbackEl, message, eventName, eventParams) {
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(message)}`;
+    trackEvent(eventName, eventParams);
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+    if (feedbackEl) {
+        feedbackEl.classList.remove('d-none');
+        feedbackEl.innerHTML = `
+            <div class="alert alert-success border-0 shadow-sm small mb-0 mt-3">
+                <div class="fw-bold mb-1"><i class="bi bi-check-circle-fill me-1"></i>Talebiniz WhatsApp için hazırlandı!</div>
+                <p class="mb-2">Yeni sekmede WhatsApp açılmadıysa aşağıdaki butondan açabilir veya mesajı kopyalayabilirsiniz.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-sm rounded-pill fw-bold">
+                        <i class="bi bi-whatsapp me-1"></i>WhatsApp'ta Aç
+                    </a>
+                    <button type="button" class="btn btn-outline-success btn-sm rounded-pill fw-bold copy-form-msg-btn">
+                        <i class="bi bi-clipboard me-1"></i>Mesajı Kopyala
+                    </button>
+                </div>
+            </div>
+        `;
+        const copyBtn = feedbackEl.querySelector('.copy-form-msg-btn');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', function() {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(message).then(function() {
+                        copyBtn.innerHTML = '<i class="bi bi-check2 me-1"></i>Kopyalandı';
+                    });
+                }
+            });
+        }
+    }
+}
+
 // ========================================
 // SAYFA ETKİLEŞİMLERİ & OLAY DİNLEYİCİLERİ
 // ========================================
@@ -380,6 +481,7 @@ function decreaseQuantity(productId) {
 document.addEventListener('DOMContentLoaded', function() {
     updateCartUI();
 
+    // Sepete Ekle butonları + GA4 add_to_cart event
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
     addToCartButtons.forEach(function(button) {
         let buttonTimer = null;
@@ -387,7 +489,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const productId = button.getAttribute('data-product-id');
             const productName = button.getAttribute('data-product-name');
-            const productPrice = button.getAttribute('data-product-price');
+            const productPrice = parseInt(button.getAttribute('data-product-price'), 10);
 
             const inputGroup = button.closest('.input-group');
             const quantityInput = inputGroup.querySelector('.quantity-input');
@@ -396,11 +498,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const product = {
                 id: productId,
                 name: productName,
-                price: parseInt(productPrice, 10),
+                price: productPrice,
                 quantity: quantity
             };
 
             addToCart(product);
+
+            trackEvent('add_to_cart', {
+                currency: 'TRY',
+                value: productPrice * quantity,
+                items: [{
+                    item_id: productId,
+                    item_name: productName,
+                    price: productPrice,
+                    quantity: quantity
+                }]
+            });
 
             if (buttonTimer) {
                 clearTimeout(buttonTimer);
@@ -421,14 +534,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // WhatsApp checkout butonu
+    // WhatsApp checkout butonu + GA4 whatsapp_order_submit event
     const checkoutBtn = document.getElementById('checkout-whatsapp-btn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', function() {
             try {
+                const cart = getCart();
+                const totals = calculateCartTotals(cart);
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
                 const message = generateWhatsAppMessage();
-                const whatsappUrl = `https://api.whatsapp.com/send?phone=905519482274&text=${encodeURIComponent(message)}`;
-                window.open(whatsappUrl, '_blank');
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(message)}`;
+
+                trackEvent('whatsapp_order_submit', {
+                    currency: 'TRY',
+                    value: totals.finalTotal,
+                    delivery_method: totals.deliveryMethod,
+                    items_count: totalItems
+                });
+
+                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
                 const modal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
                 if (modal) {
@@ -499,9 +623,88 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // WhatsApp tıklama takibi (yerel özet)
-    document.querySelectorAll('a[href*="wa.me"]').forEach(function(btn) {
+    // O3: İletişim Hızlı Talep Formu (/iletisim)
+    const contactForm = document.getElementById('contact-inquiry-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = (document.getElementById('cf-name').value || '').trim();
+            const city = (document.getElementById('cf-city').value || '').trim();
+            const topic = document.getElementById('cf-topic').value;
+            const delivery = document.getElementById('cf-delivery').value;
+            const note = (document.getElementById('cf-note').value || '').trim();
+
+            if (!name || !city) {
+                contactForm.reportValidity();
+                return;
+            }
+
+            let msg = `Merhaba, web sitesi iletişim formundan yazıyorum:\n\n`;
+            msg += `👤 Ad Soyad: ${name}\n`;
+            msg += `📍 İl / İlçe: ${city}\n`;
+            msg += `📌 Konu: ${topic}\n`;
+            msg += `🚚 Teslimat Tercihi: ${delivery}\n`;
+            if (note) {
+                msg += `📝 Not / Boy & Adet: ${note}\n`;
+            }
+
+            handleWhatsAppFormSubmit(
+                contactForm,
+                document.getElementById('contact-form-feedback'),
+                msg,
+                'contact_form_submit',
+                { topic: topic, delivery_preference: delivery }
+            );
+        });
+    }
+
+    // O3: Toptan Klinik & Uygulayıcı Teklif Formu (/toptan-suluk)
+    const wholesaleForm = document.getElementById('wholesale-quote-form');
+    if (wholesaleForm) {
+        wholesaleForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = (document.getElementById('wf-name').value || '').trim();
+            const city = (document.getElementById('wf-city').value || '').trim();
+            const role = document.getElementById('wf-role').value;
+            const qty = document.getElementById('wf-qty').value;
+            const size = document.getElementById('wf-size').value;
+            const note = (document.getElementById('wf-note').value || '').trim();
+
+            if (!name || !city) {
+                wholesaleForm.reportValidity();
+                return;
+            }
+
+            let msg = `Merhaba, TOPTAN tıbbi sülük fiyat teklifi almak istiyorum:\n\n`;
+            msg += `🏥 Ad Soyad / Kurum: ${name}\n`;
+            msg += `📍 Şehir / İlçe: ${city}\n`;
+            msg += `🩺 Uygulayıcı Türü: ${role}\n`;
+            msg += `📦 Talep Edilen Adet: ${qty}\n`;
+            msg += `📏 Boy Tercihi: ${size}\n`;
+            if (note) {
+                msg += `📝 Ek Not: ${note}\n`;
+            }
+
+            handleWhatsAppFormSubmit(
+                wholesaleForm,
+                document.getElementById('wholesale-form-feedback'),
+                msg,
+                'wholesale_quote_submit',
+                { customer_role: role, quantity_tier: qty, size_preference: size }
+            );
+        });
+    }
+
+    // O1: WhatsApp link tıklama takibi (tüm sayfalar)
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(btn) {
         btn.addEventListener('click', function() {
+            const label = (btn.textContent || btn.getAttribute('aria-label') || 'WhatsApp').trim().slice(0, 60);
+            const isFloating = btn.classList.contains('floating-whatsapp-btn');
+            trackEvent('whatsapp_click', {
+                link_text: label,
+                cta_location: isFloating ? 'floating_fab' : 'inline_cta'
+            });
+
             try {
                 const today = new Date().toISOString().slice(0, 10);
                 const storageKey = 'ks_wa_clicks_' + today;
@@ -510,6 +713,15 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (e) {
                 // localStorage erişim koruması
             }
+        });
+    });
+
+    // O1: Telefon arama tıklama takibi (tüm sayfalar)
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            trackEvent('phone_click', {
+                phone_number: link.getAttribute('href').replace('tel:', '')
+            });
         });
     });
 });

@@ -357,14 +357,62 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="p-4 bg-white rounded-3 shadow-sm border text-center">
-                            <i class="bi bi-headset text-success" style="font-size: 3rem;"></i>
-                            <h4 class="fw-bold mt-3">Klinikler İçin Doğrudan Toptan Hattı</h4>
-                            <p class="text-muted">Haftalık veya toplu sipariş planlamanızı görüşmek için uzmanımızla iletişime geçin.</p>
-                            <a href="https://wa.me/905519482274?text=Merhaba,%20kliniğim%20için%20toptan%20tedarik%20şartlarını%20öğrenmek%20istiyorum." target="_blank" class="btn btn-success btn-lg px-4 py-3 fw-bold rounded-pill w-100">
-                                <i class="bi bi-whatsapp me-2"></i>Toptan Temsilcisine Bağlan (+90 551 948 22 74)
-                            </a>
+                    <div class="col-lg-6" id="teklif-formu">
+                        <div class="p-4 bg-white rounded-3 shadow-sm border">
+                            <div class="mb-3">
+                                <span class="badge bg-success bg-opacity-10 text-success px-3 py-1 rounded-pill fw-bold mb-2">Hızlı B2B Teklif</span>
+                                <h4 class="fw-bold mb-1">Toptan Fiyat Teklifi İste</h4>
+                                <p class="text-muted small mb-0">Adet ve boy bilgisini seçin, size özel gölet toptan fiyatını anında WhatsApp'tan paylaşalım.</p>
+                            </div>
+                            <form id="wholesale-quote-form" class="row g-3">
+                                <div class="col-sm-6">
+                                    <label for="wf-name" class="form-label small fw-semibold">Ad Soyad / Klinik Adı *</label>
+                                    <input type="text" class="form-control form-control-sm" id="wf-name" placeholder="Örn: Dr. Mehmet / Şifa Hacamat" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="wf-city" class="form-label small fw-semibold">Şehir / İlçe *</label>
+                                    <input type="text" class="form-control form-control-sm" id="wf-city" placeholder="Örn: Gebze / İstanbul / Ankara" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="wf-role" class="form-label small fw-semibold">Uygulayıcı / Kurum Türü</label>
+                                    <select class="form-select form-select-sm" id="wf-role">
+                                        <option value="Hacamat / GETAT Merkezi">Hacamat / GETAT Merkezi</option>
+                                        <option value="Klinik / Hekim">Klinik / Hekim</option>
+                                        <option value="Aktar / Satış Noktası">Aktar / Satış Noktası</option>
+                                        <option value="Düzenli Uygulayıcı">Düzenli Uygulayıcı</option>
+                                        <option value="Diğer">Diğer</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="wf-qty" class="form-label small fw-semibold">Adet Aralığı</label>
+                                    <select class="form-select form-select-sm" id="wf-qty">
+                                        <option value="75 Adet">75 Adet</option>
+                                        <option value="100 Adet (En Popüler)" selected>100 Adet (En Popüler)</option>
+                                        <option value="250 Adet">250 Adet</option>
+                                        <option value="500+ Adet">500+ Adet</option>
+                                        <option value="Haftalık Düzenli Tedarik">Haftalık Düzenli Tedarik</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="wf-size" class="form-label small fw-semibold">Boy Tercihi</label>
+                                    <select class="form-select form-select-sm" id="wf-size">
+                                        <option value="Karışık (Orta + Botoks + Büyük)">Karışık (Orta + Botoks + Büyük)</option>
+                                        <option value="Ağırlıklı Orta Boy">Ağırlıklı Orta Boy</option>
+                                        <option value="Ağırlıklı Botoks Boy">Ağırlıklı Botoks Boy</option>
+                                        <option value="Ağırlıklı Büyük Boy">Ağırlıklı Büyük Boy</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="wf-note" class="form-label small fw-semibold">Ek Not (Opsiyonel)</label>
+                                    <input type="text" class="form-control form-control-sm" id="wf-note" placeholder="Örn: Her Pazartesi düzenli 100 adet gönderim istiyoruz.">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-success fw-bold py-2 rounded-pill w-100 shadow-sm">
+                                        <i class="bi bi-whatsapp me-2"></i>WhatsApp'tan Özel Toptan Teklif Al
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="wholesale-form-feedback" class="d-none"></div>
                         </div>
                     </div>
                 </div>

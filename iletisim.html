@@ -293,6 +293,57 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Hızlı Sipariş & Bilgi Formu (O3) -->
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="p-4 p-md-5 bg-white rounded-3 shadow-sm border">
+                            <div class="mb-4">
+                                <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill fw-bold mb-2">Hızlı Talep Formu</span>
+                                <h3 class="h4 fw-bold text-dark mb-1">Sipariş veya Bilgi Talebinizi Hızlıca İletin</h3>
+                                <p class="text-muted small mb-0">Bilgilerinizi doldurun, tek tıkla düzenli WhatsApp mesajı olarak doğrudan hattımıza iletelim.</p>
+                            </div>
+                            <form id="contact-inquiry-form" class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="cf-name" class="form-label small fw-semibold">Adınız Soyadınız *</label>
+                                    <input type="text" class="form-control" id="cf-name" placeholder="Örn: Ahmet Yılmaz" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cf-city" class="form-label small fw-semibold">İl / İlçe *</label>
+                                    <input type="text" class="form-control" id="cf-city" placeholder="Örn: Gebze / Kocaeli veya İstanbul" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cf-topic" class="form-label small fw-semibold">Konu</label>
+                                    <select class="form-select" id="cf-topic">
+                                        <option value="Perakende Sülük Siparişi">Perakende Sülük Siparişi</option>
+                                        <option value="Darıca / Gebze Elden Teslimat">Darıca / Gebze Elden Teslimat</option>
+                                        <option value="Hazır Şifa Paketleri (Ücretsiz Kargo)">Hazır Şifa Paketleri (Ücretsiz Kargo)</option>
+                                        <option value="Toptan / Klinik Alımı">Toptan / Klinik Alımı</option>
+                                        <option value="Boy Seçimi & Bakım Danışmanlığı">Boy Seçimi &amp; Bakım Danışmanlığı</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cf-delivery" class="form-label small fw-semibold">Teslimat Tercihi</label>
+                                    <select class="form-select" id="cf-delivery">
+                                        <option value="Türkiye Geneli Canlı Kargo">Türkiye Geneli Canlı Kargo (2.500 TL üzeri ücretsiz)</option>
+                                        <option value="Darıca / Gebze Elden Teslim (0 TL)">Darıca / Gebze Elden Teslim (0 TL)</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="cf-note" class="form-label small fw-semibold">İstediğiniz Boy, Adet veya Sorunuz (Opsiyonel)</label>
+                                    <textarea class="form-control" id="cf-note" rows="3" placeholder="Örn: 15 adet Orta Boy ve 10 adet Botoks Boy hakkında bilgi almak istiyorum."></textarea>
+                                </div>
+                                <div class="col-12 d-flex flex-wrap align-items-center justify-content-between gap-2 pt-1">
+                                    <span class="text-muted small"><i class="bi bi-shield-check text-success me-1"></i>Bilgileriniz kaydedilmez, yalnızca WhatsApp mesajınız oluşturulur.</span>
+                                    <button type="submit" class="btn btn-success fw-bold px-4 py-2 rounded-pill shadow-sm">
+                                        <i class="bi bi-whatsapp me-2"></i>WhatsApp ile Talebi Gönder
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="contact-form-feedback" class="d-none"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
