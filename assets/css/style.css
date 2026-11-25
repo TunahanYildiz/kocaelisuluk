@@ -3047,4 +3047,73 @@ body {
         max-height: 220px !important;
     }
 }
-
+
+/* ========================================
+   B1 & B2: HESAPLAYICI & B2B TOPLU HUNİ STİLLERİ
+   ======================================== */
+
+.calc-card-header {
+    background: linear-gradient(135deg, #2d5016 0%, #4a7c2a 100%);
+}
+
+.calc-option-card {
+    display: block;
+    padding: 0.75rem 0.9rem;
+    border: 2px solid #e5ece2;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.calc-option-card:hover {
+    border-color: #7ea863;
+    background-color: #f9fcf7;
+}
+
+.calc-option-card.active {
+    border-color: #2d5016;
+    background-color: #f1f8ec;
+    box-shadow: 0 3px 10px rgba(45, 80, 22, 0.12);
+}
+
+.calc-pill-btn {
+    border: 1.5px solid #d4dfd0;
+    background-color: #fff;
+    color: #2d5016;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.calc-pill-btn:hover {
+    border-color: #4a7c2a;
+    background-color: #f1f8ec;
+    color: #2d5016;
+}
+
+.calc-pill-btn.active {
+    background-color: #2d5016;
+    border-color: #2d5016;
+    color: #fff;
+}
+
+.b2b-step-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #2d5016;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.b2b-form-highlight {
+    box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.28) !important;
+    transition: box-shadow 0.3s ease;
+}

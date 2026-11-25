@@ -35,7 +35,7 @@
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"></noscript>
 
     <!-- Bizim Özel Stil Dosyamız (Bootstrap'ten SONRA gelmeli) -->
-    <link rel="stylesheet" href="assets/css/style.min.css?v=20261126">
+    <link rel="stylesheet" href="assets/css/style.min.css?v=20261126b">
 
     <!-- Schema.org Product List & BreadcrumbList -->
     <script type="application/ld+json">
@@ -635,6 +635,153 @@
                     </div>
                 </div>
 
+                <!-- B1: İnteraktif Boy & Adet Hesaplayıcı -->
+                <div class="mt-5 pt-2" id="suluk-hesaplayici">
+                    <div class="calc-card bg-white rounded-4 border shadow-sm overflow-hidden">
+                        <div class="calc-card-header px-4 py-3 text-white d-flex flex-wrap justify-content-between align-items-center gap-2">
+                            <div>
+                                <span class="badge bg-warning text-dark rounded-pill fw-bold mb-1">Akıllı Seçim Aracı</span>
+                                <h2 class="h4 fw-bold mb-0 text-white">Hangi Boy &amp; Kaç Adet Sülük Almalıyım?</h2>
+                            </div>
+                            <span class="small opacity-75"><i class="bi bi-lightning-charge-fill me-1"></i>Anında Kargo Dahil Hesaplar</span>
+                        </div>
+                        <div class="p-3 p-md-4">
+                            <div class="row g-4 align-items-stretch">
+                                <!-- Sol Sütun: Seçimler -->
+                                <div class="col-lg-7">
+                                    <div class="mb-3">
+                                        <div class="small fw-bold text-dark mb-2">1. Uygulama Bölgesi Seçiniz</div>
+                                        <div class="row g-2" id="calc-area-group">
+                                            <div class="col-sm-6">
+                                                <label class="calc-option-card" data-area="yuz">
+                                                    <input type="radio" name="calcArea" value="yuz" class="visually-hidden">
+                                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                                        <span class="fw-bold small text-dark">Yüz &amp; Göz Çevresi</span>
+                                                        <span class="badge bg-info bg-opacity-10 text-info">65 TL</span>
+                                                    </div>
+                                                    <div class="text-muted" style="font-size: 0.78rem;">Botoks (Küçük) Boy · Hassas cilt</div>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="calc-option-card active" data-area="genel">
+                                                    <input type="radio" name="calcArea" value="genel" class="visually-hidden" checked>
+                                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                                        <span class="fw-bold small text-dark">Genel Vücut &amp; Hacamat</span>
+                                                        <span class="badge bg-primary bg-opacity-10 text-primary">80 TL</span>
+                                                    </div>
+                                                    <div class="text-muted" style="font-size: 0.78rem;">Orta Boy · Sırt, boyun, bel</div>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="calc-option-card" data-area="varis">
+                                                    <input type="radio" name="calcArea" value="varis" class="visually-hidden">
+                                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                                        <span class="fw-bold small text-dark">Varis &amp; Bacak Dolaşımı</span>
+                                                        <span class="badge bg-warning bg-opacity-25 text-dark">95 TL</span>
+                                                    </div>
+                                                    <div class="text-muted" style="font-size: 0.78rem;">Büyük Boy · Güçlü emiş</div>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="calc-option-card" data-area="diz">
+                                                    <input type="radio" name="calcArea" value="diz" class="visually-hidden">
+                                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                                        <span class="fw-bold small text-dark">Diz Kireçlenmesi &amp; Eklem</span>
+                                                        <span class="badge bg-success bg-opacity-10 text-success">Karma</span>
+                                                    </div>
+                                                    <div class="text-muted" style="font-size: 0.78rem;">Orta + Büyük Boy dengeli set</div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-sm-7">
+                                            <div class="small fw-bold text-dark mb-2">2. Planlanan Seans Sayısı</div>
+                                            <div class="d-flex flex-wrap gap-2" id="calc-sessions-group">
+                                                <button type="button" class="btn btn-sm calc-pill-btn" data-sessions="1">1 Seans</button>
+                                                <button type="button" class="btn btn-sm calc-pill-btn" data-sessions="2">2 Seans</button>
+                                                <button type="button" class="btn btn-sm calc-pill-btn active" data-sessions="3">3 Seans</button>
+                                                <button type="button" class="btn btn-sm calc-pill-btn" data-sessions="4">4 Seans</button>
+                                                <button type="button" class="btn btn-sm calc-pill-btn" data-sessions="5">5 Seans</button>
+                                                <button type="button" class="btn btn-sm calc-pill-btn" data-sessions="6">6 Seans</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="small fw-bold text-dark mb-2">3. Kişi Sayısı</div>
+                                            <div class="d-flex gap-2" id="calc-people-group">
+                                                <button type="button" class="btn btn-sm calc-pill-btn active" data-people="1">1 Kişi</button>
+                                                <button type="button" class="btn btn-sm calc-pill-btn" data-people="2">2 Kişi</button>
+                                                <button type="button" class="btn btn-sm calc-pill-btn" data-people="3">3 Kişi</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="small fw-bold text-dark mb-2">4. Teslimat Tercihi</div>
+                                        <div class="d-flex flex-wrap gap-2" id="calc-delivery-group">
+                                            <button type="button" class="btn btn-sm calc-pill-btn active" data-delivery="kargo">
+                                                <i class="bi bi-truck me-1"></i>81 İle Canlı Kargo
+                                            </button>
+                                            <button type="button" class="btn btn-sm calc-pill-btn" data-delivery="elden">
+                                                <i class="bi bi-geo-alt-fill me-1"></i>Darıca / Gebze Elden Teslim (0 TL)
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sağ Sütun: Canlı Sonuç Özeti -->
+                                <div class="col-lg-5">
+                                    <div class="calc-result-box h-100 p-3 p-md-4 rounded-3 border bg-light d-flex flex-column justify-content-between">
+                                        <div>
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <span class="text-uppercase small fw-bold text-success" style="letter-spacing: 0.4px;">Önerilen Planınız</span>
+                                                <span class="badge bg-success rounded-pill" id="calc-total-qty-badge">15 Adet</span>
+                                            </div>
+                                            <div class="h5 fw-bold text-dark mb-1" id="calc-rec-title">15 Adet Orta Boy Verbana</div>
+                                            <p class="text-muted small mb-3" id="calc-rec-desc">Genel vücut, sırt ve hacamat sonrası 3 seans (1 kişi) için ideal ortalama adet.</p>
+
+                                            <div class="bg-white rounded-3 border p-3 mb-3 small">
+                                                <div id="calc-breakdown-lines" class="mb-2">
+                                                    <div class="d-flex justify-content-between text-muted mb-1">
+                                                        <span>Orta Boy Sülük (15 × 80 TL)</span>
+                                                        <span class="fw-semibold text-dark">1.200 TL</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between text-muted border-top pt-2 mb-2">
+                                                    <span id="calc-shipping-label">81 İle Canlı Termal Kargo</span>
+                                                    <span class="fw-semibold text-dark" id="calc-shipping-value">+200 TL</span>
+                                                </div>
+                                                <div class="d-flex justify-content-between align-items-center border-top pt-2">
+                                                    <span class="fw-bold text-dark">Kargo Dahil Toplam</span>
+                                                    <span class="fs-4 fw-bold text-success" id="calc-grand-total">1.400 TL</span>
+                                                </div>
+                                            </div>
+
+                                            <div id="calc-shipping-tip" class="small text-muted mb-3">
+                                                <i class="bi bi-info-circle text-success me-1"></i>2.500 TL ve üzeri siparişlerde canlı kargo <strong>ücretsizdir</strong>.
+                                            </div>
+                                        </div>
+
+                                        <div class="d-grid gap-2">
+                                            <button type="button" class="btn btn-success fw-bold py-2 rounded-pill shadow-sm" id="calc-add-to-cart-btn">
+                                                <i class="bi bi-cart-plus-fill me-2"></i>Önerilenleri Tek Tıkla Sepete Ekle
+                                            </button>
+                                            <a href="https://wa.me/905519482274?text=Merhaba,%20hesaplayıcıya%20göre%2015%20Adet%20Orta%20Boy%20Verbana%20siparişi%20vermek%20istiyorum."
+                                               target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm fw-bold py-2 rounded-pill" id="calc-wa-link">
+                                                <i class="bi bi-whatsapp me-1"></i>Bu Planı WhatsApp'tan Danış
+                                            </a>
+                                        </div>
+                                        <p class="text-muted mb-0 mt-2" style="font-size: 0.72rem; line-height: 1.4;">
+                                            *Adetler genel uygulama ortalamasına göre bilgi amaçlı hesaplanır; kesin seans planı için hekim/GETAT uzmanına danışınız.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Avantajlı Hazır Paketler (2.500 TL Üzeri Ücretsiz Kargo) -->
                 <div class="mt-5 pt-3">
                     <div class="text-center mb-4">
@@ -957,7 +1104,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- Bizim Özel JS Dosyamız -->
-    <script src="assets/js/script.min.js?v=20261126" defer></script>
+    <script src="assets/js/script.min.js?v=20261126b" defer></script>
 
     <!-- Sepet Modal -->
     <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
